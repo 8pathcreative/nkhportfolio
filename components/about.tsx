@@ -6,18 +6,15 @@ export default function About() {
   return (
     <section id="about" className="py-16 px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-sm uppercase text-neutral-500 mb-8">About Me</h2>
+        <h2 className="text-3xl font-bold mb-6">About</h2>
+        <p className="text-muted-foreground mb-6">
+          Hi, I am Neil! I'm a UX design engineer with 9+ years of experience working with medical centers and
+          healthcare providers to create intuitive, accessible interfaces that enhance patient care and clinical
+          workflows.
+        </p>
 
         <div className="grid md:grid-cols-[2fr_1fr] gap-8 items-start">
           <div className="space-y-6">
-            <p className="text-xl md:text-2xl leading-relaxed">
-              Hi, I am Rony! I'm a UX design engineer with 9+ years of experience working with medical centers and
-              multinational corporations.
-            </p>
-            <p className="text-xl md:text-2xl leading-relaxed">
-              I work hand-in-hand with faculty and medical subject matter experts to create intuitive, accessible, and
-              impactful digital solutions that enhance healthcare delivery and patient outcomes.
-            </p>
             <p className="text-xl md:text-2xl leading-relaxed">
               I understand the importance of Pixel-Perfect design and am committed to producing high-quality interfaces
               that balance aesthetic appeal with functional requirements in complex medical environments.
@@ -46,10 +43,10 @@ export default function About() {
             <div className="aspect-square rounded-full overflow-hidden border-4 border-neutral-800">
               <Image
                 src="/placeholder.svg?height=400&width=400"
-                alt="Rony Forsberg"
+                alt="Neil Humphrey"
                 width={400}
                 height={400}
-                className="object-cover"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
           </div>

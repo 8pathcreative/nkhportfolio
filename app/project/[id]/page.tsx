@@ -1,6 +1,4 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react"
+import { ArrowLeft, ArrowRight, ExternalLink, Link } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -125,9 +123,8 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                   </Link>
                 </Button>
               </div>
-
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                <Image
+                <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   width={1200}
@@ -173,9 +170,8 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                     <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
                     <p className="text-muted-foreground">{step.description}</p>
                   </div>
-
                   <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                    <Image
+                    <img
                       src={step.image || "/placeholder.svg"}
                       alt={step.title}
                       width={800}
@@ -201,19 +197,19 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         <section className="py-16 px-4">
           <div className="container mx-auto">
             <div className="flex justify-between">
-              <Button variant="outline" className="rounded-full">
-                <Link href="#" className="inline-flex items-center">
+              <Link href="#" className="inline-flex items-center">
+                <Button className="rounded-full">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Previous Project
-                </Link>
-              </Button>
+                </Button>
+              </Link>
 
-              <Button variant="outline" className="rounded-full">
-                <Link href="#" className="inline-flex items-center">
+              <Link href="#" className="inline-flex items-center">
+                <Button className="rounded-full">
                   Next Project
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

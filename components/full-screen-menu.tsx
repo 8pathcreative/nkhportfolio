@@ -45,9 +45,13 @@ export function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps) {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-lg font-medium" onClick={onClose}>
-          Rony.
-        </Link>
+        <div className="flex justify-center">
+          <h1 className="text-4xl font-bold">
+            <Link href="/" className="hover:text-primary duration-200">
+              Neil.
+            </Link>
+          </h1>
+        </div>
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <button

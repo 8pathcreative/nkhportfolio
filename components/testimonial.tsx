@@ -26,8 +26,7 @@ export default function Testimonial() {
 
           <div className="space-y-6">
             <p className="text-xl md:text-2xl leading-relaxed">
-              "Rony has an exceptional ability to translate complex medical concepts into intuitive user interfaces.
-              Their work has significantly improved our patient engagement and clinical workflows."
+              "Neil has an exceptional ability to translate complex medical concepts into intuitive user interfaces. His work on our patient portal significantly improved user satisfaction and engagement."
             </p>
 
             <div className="flex items-center gap-4">

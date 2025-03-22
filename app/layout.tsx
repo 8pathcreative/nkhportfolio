@@ -10,9 +10,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Rony Forsberg | UX Design Engineer",
+  title: "Neil Humphrey | UX Design Engineer",
   description:
-    "Personal portfolio of Rony Forsberg, a UX design engineer based in Omaha, Nebraska specializing in medical and healthcare solutions.",
+    "Personal portfolio of Neil Humphrey, a UX design engineer based in Omaha, Nebraska specializing in medical and healthcare solutions.",
     generator: 'v0.dev'
 }
 
