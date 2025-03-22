@@ -42,7 +42,7 @@ export default function About() {
           <div className="relative">
             <div className="aspect-square rounded-full overflow-hidden border-4 border-neutral-800">
               <Image
-                src="/placeholder.svg?height=400&width=400"
+                src="https://cdn.prod.website-files.com/6593837a237f27f93f2579ec/659de91ca988aa0c3ba35b73_neil-about-image.webp"
                 alt="Neil Humphrey"
                 width={400}
                 height={400}

@@ -53,43 +53,6 @@ export default function Skills() {
             <SkillCard key={index} icon={skill.icon} title={skill.title} description={skill.description} />
           ))}
         </div>
-
-        <div className="flex flex-col md:flex-row justify-between items-center mt-16 gap-8">
-          <div className="text-center md:text-left">
-            <span className="text-neutral-400 text-sm">I create your solutions design</span>
-            <h3 className="text-xl font-medium mt-2">Planning</h3>
-          </div>
-
-          <div className="flex-1 max-w-md">
-            <div className="border-dashed border-t border-neutral-700 relative">
-              <div className="absolute -top-3 left-0 w-6 h-6 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center">
-                <span className="text-xs">1</span>
-              </div>
-              <div className="absolute -top-3 right-0 w-6 h-6 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center">
-                <span className="text-xs">2</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center md:text-right">
-            <span className="text-neutral-400 text-sm">Develop solutions with component design</span>
-            <h3 className="text-xl font-medium mt-2">Development</h3>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <div className="text-center">
-            <span className="text-neutral-400 text-sm">Integrate with Figma</span>
-            <h3 className="text-xl font-medium mt-2">Design</h3>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <div className="text-center">
-            <span className="text-neutral-400 text-sm">Deploy your website and optimize speed to the max</span>
-            <h3 className="text-xl font-medium mt-2">Launch</h3>
-          </div>
-        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0">

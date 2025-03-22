@@ -11,8 +11,8 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center pt-16 pb-8 px-4 relative">
-      <div className="text-center max-w-4xl mx-auto space-y-8">
+    <section className="min-h-screen flex flex-col justify-center items-center pt-16 pb-8 px-0 relative overflow-hidden">
+      <div className="text-center max-w-4xl mx-auto space-y-8 z-10 px-4">
         <div
           className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
         >
@@ -43,11 +43,11 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="absolute bottom-12 animate-bounce">
+      <div className="absolute bottom-12 animate-bounce z-10">
         <ChevronDown className="h-6 w-6 text-muted-foreground" />
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0 z-10">
         <div className="divider w-full"></div>
       </div>
     </section>
