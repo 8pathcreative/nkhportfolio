@@ -34,7 +34,7 @@ export default function ExperimentalHero() {
       {/* Radial gradient for the container to give a faded look */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
       
-      <div className="text-center max-w-5xl mx-auto space-y-8 z-10 px-4 mt-[var(--header-height)]">
+      <div className="text-center max-w-5xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 z-10 px-4 mt-[var(--header-height)]">
         <div
           className={`transition-opacity duration-500 delay-300 ${opacityClass}`}
         >
@@ -48,7 +48,7 @@ export default function ExperimentalHero() {
         </div>
 
         <h1
-          className={`text-3 sm:text-375 md:text-45 lg:text-5 font-medium tracking-tight leading-[1.1] transition-opacity duration-500 ${opacityClass}`}
+          className={`text-3 sm:text-375 md:text-45 lg:text-5 font-medium tracking-tight leading-[1.1] transition-opacity duration-500 ${opacityClass} mb-2 sm:mb-4 md:mb-6 lg:mb-8`}
         >
           <span className="block">
             Design by{" "}
@@ -80,7 +80,7 @@ export default function ExperimentalHero() {
         
         {/* Prerender the LCP element without transitions initially */}
         <p
-          className="text-1125 md:text-125 text-muted-foreground mt-6 max-w-2xl mx-auto font-display text-pretty"
+          className="text-1125 md:text-125 text-muted-foreground max-w-2xl mx-auto font-display text-pretty"
         >
           UX Design Engineer based in Omaha, Nebraska with 9+ years of experience working with medical centers and
           multinational corporations.
