@@ -1,5 +1,9 @@
 import { MetadataRoute } from 'next'
 
+// This ensures the route is statically generated
+export const dynamic = 'force-static'
+export const revalidate = false
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nkhportfolio.vercel.app'
   
