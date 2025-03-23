@@ -28,10 +28,10 @@ export default function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              className="w-10 h-10 rounded-full"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full"
               aria-label="Open menu"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-7 w-7 sm:h-8 sm:w-8" />
             </Button>
           </div>
         </div>
