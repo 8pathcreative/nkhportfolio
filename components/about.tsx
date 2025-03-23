@@ -7,19 +7,17 @@ import { ShootingStarField, StarsField } from "./ui/shooting-stars"
 
 export default function About() {
   return (
-    <section id="about" className="py-16 px-4 relative overflow-hidden bg-gradient-to-b from-black to-slate-950">
+    <section id="about" className="py-20 md:py-28 lg:py-36 px-4 relative overflow-hidden bg-gradient-to-b from-black to-slate-950">
       <ShootingStarField quantity={15} />
       <StarsField quantity={100} />
       
       <div className="container mx-auto relative z-10">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium mb-8 tracking-tight">About Me</h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium mb-8 md:mb-12 lg:mb-16 tracking-tight">About Me</h2>
         
-        <div className="grid md:grid-cols-[2fr_1fr] gap-8 items-start">
+        <div className="grid md:grid-cols-[2fr_1fr] gap-8 md:gap-12 lg:gap-16 items-start">
           <div className="space-y-6">
             <p className="text-muted-foreground mb-6">
-              Hi, i'm Neil! I'm a design engineer with 9+ years of experience working with medical centers and
-              healthcare providers to create intuitive, accessible interfaces that enhance patient care and clinical
-              workflows.
+              Hi, i'm Neil! I'm a design engineer with 9+ years of experience I'm a Design Engineer specializing in the intersection of UX design and front-end development. With a deep understanding of user experience, interaction design, and scalable front-end architecture, I craft intuitive digital experiences that are as functional as they are beautiful.
             </p>
             
             <p className="text-xl md:text-2xl leading-relaxed">
@@ -27,26 +25,26 @@ export default function About() {
               that balance aesthetic appeal with functional requirements in complex medical environments.
             </p>
 
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center gap-6 pt-4">
               <Link href="https://github.com" target="_blank" aria-label="GitHub">
-                <Github className="h-5 w-5 text-neutral-400 hover:text-white transition-colors" />
+                <Github className="h-6 w-6 text-neutral-400 hover:text-white transition-colors" />
               </Link>
               <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5 text-neutral-400 hover:text-white transition-colors" />
+                <Linkedin className="h-6 w-6 text-neutral-400 hover:text-white transition-colors" />
               </Link>
               <Link href="https://twitter.com" target="_blank" aria-label="Twitter">
-                <Twitter className="h-5 w-5 text-neutral-400 hover:text-white transition-colors" />
+                <Twitter className="h-6 w-6 text-neutral-400 hover:text-white transition-colors" />
               </Link>
               <Link href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <Instagram className="h-5 w-5 text-neutral-400 hover:text-white transition-colors" />
+                <Instagram className="h-6 w-6 text-neutral-400 hover:text-white transition-colors" />
               </Link>
               <Link href="https://facebook.com" target="_blank" aria-label="Facebook">
-                <Facebook className="h-5 w-5 text-neutral-400 hover:text-white transition-colors" />
+                <Facebook className="h-6 w-6 text-neutral-400 hover:text-white transition-colors" />
               </Link>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative md:mt-0 mt-8">
             <div className="aspect-square rounded-full overflow-hidden border-4 border-neutral-800">
               <Image
                 src="https://cdn.prod.website-files.com/6593837a237f27f93f2579ec/659de91ca988aa0c3ba35b73_neil-about-image.webp"
@@ -59,8 +57,8 @@ export default function About() {
           </div>
         </div>
 
-        <h3 className="text-xl font-medium mt-16 mb-6">Tools I Work With</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+        <h3 className="text-2xl font-medium mb-8 md:mb-12 mt-16 md:mt-24 lg:mt-32">Tools I Work With</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
           <div className="bg-neutral-900/50 backdrop-blur-sm rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
             <div className="flex flex-col items-center mb-4">
               <div className="w-16 h-16 flex items-center justify-center mb-3">

@@ -44,14 +44,14 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16 px-4 relative">
+    <section id="skills" className="section-spacing-sm px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium mb-8 tracking-tight">My Skills</h2>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight section-heading">My Skills</h2>
+        <p className="text-xl md:text-2xl text-muted-foreground section-subheading max-w-3xl">
           I love to craft functional solutions for unique problems. These are some skills I've picked up over my career
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <SkillCard key={index} icon={skill.icon} title={skill.title} description={skill.description} />
           ))}

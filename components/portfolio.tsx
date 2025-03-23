@@ -68,10 +68,10 @@ export default function Portfolio() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
-    <section id="portfolio" className="py-24 px-4 relative">
+    <section id="portfolio" className="section-spacing px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-medium mb-4">Selected Work</h2>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-medium section-heading">Selected Work</h2>
+        <p className="text-xl md:text-2xl text-muted-foreground section-subheading max-w-3xl">
           I craft digital healthcare solutions that enhance the experience for both patients and medical professionals
         </p>
 

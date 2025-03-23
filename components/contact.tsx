@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-4 relative">
+    <section id="contact" className="section-spacing px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium section-heading">
           Let's discuss your project
         </h2>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-8 md:mt-12">
           <div className="flex flex-col gap-4">
             <Link
               href="mailto:hello@neilhumphrey.com"

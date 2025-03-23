@@ -49,9 +49,9 @@ const timelineItems = [
 
 export default function Timeline() {
   return (
-    <section className="py-16 px-4 relative">
+    <section className="section-spacing-sm px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-medium mb-12 text-center">My Design & Development Process</h2>
+        <h2 className="text-2xl md:text-3xl font-medium text-center section-heading">My Design & Development Process</h2>
 
         <div className="relative max-w-3xl mx-auto">
           {/* Vertical line */}
