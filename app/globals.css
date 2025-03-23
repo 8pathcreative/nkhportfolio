@@ -198,3 +198,30 @@
   @apply mb-12 md:mb-16 lg:mb-20;
 }
 
+/* Sun and Moon icon animations */
+.sun {
+  animation: spin 20s linear infinite;
+}
+
+.moon {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.8));
+  }
+}
+

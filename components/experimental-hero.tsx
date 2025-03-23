@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { ChevronDown } from "lucide-react"
 
-export default function Hero() {
+export default function ExperimentalHero() {
   // Use null as initial state to detect if we've hydrated yet
   const [isVisible, setIsVisible] = useState<boolean | null>(true) // Start with visible to improve LCP
 
@@ -51,10 +51,30 @@ export default function Hero() {
           className={`text-3 sm:text-375 md:text-45 lg:text-5 font-medium tracking-tight leading-[1.1] transition-opacity duration-500 ${opacityClass}`}
         >
           <span className="block">
-            Design by <span className="day-gradient-text">Day</span>,
+            Design by{" "}
+            <span className="inline-flex items-center">
+              <svg className="sun h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 inline-block text-yellow-500 mr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="12" y1="21" x2="12" y2="23" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="1" y1="12" x2="3" y2="12" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="21" y1="12" x2="23" y2="12" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" strokeWidth="2" strokeLinecap="round"></line>
+              </svg>
+              Day
+            </span>,
           </span>
           <span className="block">
-            Code by <span className="night-gradient-text">Night</span>.
+            Code by{" "}
+            <span className="inline-flex items-center">
+              <svg className="moon h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 inline-block text-blue-800 mr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+              </svg>
+              Night
+            </span>.
           </span>
         </h1>
         
@@ -80,5 +100,4 @@ export default function Hero() {
       </div>
     </section>
   )
-}
-
+} 

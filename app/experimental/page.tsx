@@ -1,27 +1,31 @@
-import dynamic from 'next/dynamic'
 import { Metadata } from "next"
 import ExperimentalHeader from "@/components/experimental-header"
 import { ExperimentalFeaturedProject, ExperimentalPortfolio } from "@/app/components/client-imports"
 import AlternateFooter from "@/components/alternate-footer"
+import dynamicImport from 'next/dynamic'
 
 // Import critical above-the-fold components normally
-import Hero from "@/components/hero"
+import ExperimentalHero from "@/components/experimental-hero"
 import About from "@/components/about"
 
+// Needed for static export
+export const dynamic = 'force-static'
+export const revalidate = false
+
 // Lazy-load below-the-fold components with loading placeholders
-const Skills = dynamic(() => import("@/components/skills"), { 
+const Skills = dynamicImport(() => import("@/components/skills"), { 
   ssr: true,
   loading: () => <div className="min-h-[500px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
-const Timeline = dynamic(() => import("@/components/timeline"), { 
+const Timeline = dynamicImport(() => import("@/components/timeline"), { 
   ssr: true,
   loading: () => <div className="min-h-[400px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
-const Testimonial = dynamic(() => import("@/components/testimonial"), { 
+const Testimonial = dynamicImport(() => import("@/components/testimonial"), { 
   ssr: true,
   loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
-const Contact = dynamic(() => import("@/components/contact"), { 
+const Contact = dynamicImport(() => import("@/components/contact"), { 
   ssr: true,
   loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
@@ -39,7 +43,7 @@ export default function ExperimentalPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <ExperimentalHeader />
-      <Hero />
+      <ExperimentalHero />
       <About />
       <ExperimentalFeaturedProject />
       <ExperimentalPortfolio />
