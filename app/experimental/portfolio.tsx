@@ -3,9 +3,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card"
+import { BorderMagicLink } from "@/components/ui/border-magic-button"
 
 const projects = [
   {
@@ -64,7 +63,7 @@ const projects = [
   },
 ]
 
-export default function Portfolio() {
+export default function ExperimentalPortfolio() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
@@ -83,33 +82,34 @@ export default function Portfolio() {
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <Link href={`/project/${project.id}`} className="block">
-                <CardContainer className="w-full" containerClassName="py-4">
-                  <CardBody className="w-full h-auto relative aspect-[4/3] rounded-lg overflow-hidden border border-border">
-                    <CardItem translateZ="100" className="w-full h-full">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        width={1200}
-                        height={800}
-                        className="w-full h-full object-cover"
-                      />
-                    </CardItem>
-                    <CardItem
-                      translateZ="50"
-                      className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-500 ${
-                        hoveredId === project.id ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <CardItem 
-                        translateZ="100" 
-                        className="text-white font-medium px-6 py-3 border border-white/30 rounded-full backdrop-blur-sm w-auto"
-                      >
-                        View Case Study
+              <div className="block">
+                <Link href={`/project/${project.id}`} className="block">
+                  <CardContainer className="w-full" containerClassName="py-4">
+                    <CardBody className="w-full h-auto relative aspect-[4/3] rounded-lg overflow-hidden border border-border">
+                      <CardItem translateZ="100" className="w-full h-full">
+                        <Image
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          width={1200}
+                          height={800}
+                          className="w-full h-full object-cover"
+                        />
                       </CardItem>
-                    </CardItem>
-                  </CardBody>
-                </CardContainer>
+                      <CardItem
+                        translateZ="50"
+                        className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-500 ${
+                          hoveredId === project.id ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <CardItem translateZ="100">
+                          <div className="text-xs text-white border-magic-button-inner">
+                            View Case Study
+                          </div>
+                        </CardItem>
+                      </CardItem>
+                    </CardBody>
+                  </CardContainer>
+                </Link>
 
                 <div className="space-y-3 mt-6">
                   <div className="flex justify-between items-center">
@@ -119,18 +119,15 @@ export default function Portfolio() {
                   <p className="text-sm text-muted-foreground">{project.category}</p>
                   <p className="text-base">{project.description}</p>
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </div>
 
         <div className="flex justify-center mt-8">
-          <Button
-            variant="outline"
-            className="rounded-full border-border text-muted-foreground hover:text-foreground px-8 py-6 h-auto text-base"
-          >
-            Explore All Projects <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <BorderMagicLink href="/projects" className="text-muted-foreground font-medium border-magic-link">
+            Explore All Projects
+          </BorderMagicLink>
         </div>
       </div>
 
@@ -139,5 +136,4 @@ export default function Portfolio() {
       </div>
     </section>
   )
-}
-
+} 

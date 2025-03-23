@@ -1,3 +1,5 @@
+"use client"
+
 import { Code, Layout, Layers, ShoppingBag, Cpu, BarChart3 } from "lucide-react"
 import { SkillCard } from "./skill-card"
 
@@ -44,9 +46,10 @@ export default function Skills() {
   return (
     <section id="skills" className="py-16 px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-medium mb-12">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium mb-8 tracking-tight">My Skills</h2>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl">
           I love to craft functional solutions for unique problems. These are some skills I've picked up over my career
-        </h2>
+        </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (

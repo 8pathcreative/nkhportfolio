@@ -1,30 +1,25 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card"
+import { BorderMagicLink } from "@/components/ui/border-magic-button"
 
-export default function FeaturedProject() {
+export default function ExperimentalFeaturedProject() {
   return (
     <section className="py-24 px-4 relative">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="md:w-1/2 space-y-6">
             <span className="text-sm uppercase tracking-wider text-muted-foreground">Featured Project</span>
-            <h2 className="text-3xl md:text-4xl font-medium">Healthcare Provider Dashboard</h2>
+            <h2 className="text-3xl md:text-4xl font-medium">3D Pelvic Floor Visualization</h2>
             <p className="text-lg text-muted-foreground">
-              A comprehensive dashboard redesign for a major healthcare provider, improving clinical workflow efficiency
-              by 35% and reducing training time for new staff.
+              An interactive 3D application for healthcare providers, enabling detailed visualization of pelvic floor anatomy
+              for improved patient education and treatment planning.
             </p>
             <div className="pt-4">
-              <Link
-                href="#featured-project"
-                className="inline-flex items-center text-foreground hover:text-primary transition-colors group"
-              >
+              <BorderMagicLink href="#featured-project" className="text-muted-foreground font-medium border-magic-link">
                 View Case Study
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </BorderMagicLink>
             </div>
           </div>
 
@@ -44,7 +39,7 @@ export default function FeaturedProject() {
                   translateZ="80"
                   className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-sm"
                 >
-                  UX/UI Design • 2023
+                  3D Medical App • 2023
                 </CardItem>
               </CardBody>
             </CardContainer>
@@ -57,5 +52,4 @@ export default function FeaturedProject() {
       </div>
     </section>
   )
-}
-
+} 

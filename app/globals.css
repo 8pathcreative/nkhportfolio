@@ -60,7 +60,19 @@
 }
 
 .gradient-text {
-  background: linear-gradient(to right, hsl(var(--foreground)), #a855f7);
+  background: linear-gradient(to right, #4ecdc4, #2cb5e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.day-gradient-text {
+  background: linear-gradient(to right, #fcd34d, #fef08a, #fcd34d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.night-gradient-text {
+  background: linear-gradient(to right, #4c1d95, #7e22ce, #4c1d95);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -78,6 +90,70 @@
 
   .portfolio-image-container:hover .portfolio-image {
     @apply scale-105;
+  }
+}
+
+.border-magic-button-inner {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+}
+
+.border-magic-button-inner::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 9999px;
+  filter: blur(2px);
+}
+
+.border-magic-button-inner::after {
+  content: '→';
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.border-magic-button-inner:hover::after {
+  transform: translateX(4px);
+}
+
+/* Special styling for the portfolio link */
+.border-magic-link {
+  color: white !important;
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(var(--translateX, -400px)) translateY(var(--translateY, -300px));
+    opacity: 0;
+  }
+}
+
+@keyframes twinkling {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.2;
   }
 }
 

@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from 'next/dynamic'
-import Header from "@/components/header"
+import ExperimentalHeader from "@/components/experimental-header"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
@@ -11,17 +11,17 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
 // Dynamically import components that use client features to avoid hydration issues
-const FeaturedProject = dynamic(() => import("@/components/featured-project"), { ssr: false })
-const Portfolio = dynamic(() => import("@/components/portfolio"), { ssr: false })
+const ExperimentalFeaturedProject = dynamic(() => import("./featured-project"), { ssr: false })
+const ExperimentalPortfolio = dynamic(() => import("./portfolio"), { ssr: false })
 
-export default function Home() {
+export default function ExperimentalPage() {
   return (
     <main className="min-h-screen flex flex-col">
-      <Header />
+      <ExperimentalHeader />
       <Hero />
       <About />
-      <FeaturedProject />
-      <Portfolio />
+      <ExperimentalFeaturedProject />
+      <ExperimentalPortfolio />
       <Skills />
       <Timeline />
       <Testimonial />
@@ -29,5 +29,4 @@ export default function Home() {
       <Footer />
     </main>
   )
-}
-
+} 
