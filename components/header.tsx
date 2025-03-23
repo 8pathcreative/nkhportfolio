@@ -15,8 +15,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40 h-[var(--header-height)]">
+        <div className="container mx-auto px-4 h-full flex justify-between items-center">
           <Link href="/" className="text-lg font-medium">
             Neil.
           </Link>
@@ -28,10 +28,10 @@ export default function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              className="w-9 h-9 rounded-full"
+              className="w-10 h-10 rounded-full"
               aria-label="Open menu"
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="h-6 w-6" />
             </Button>
           </div>
         </div>

@@ -13,13 +13,47 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: 'export',
   images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.prod.website-files.com',
+        pathname: '**',
+      },
+    ],
     unoptimized: true,
   },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+    optimizePackageImports: [
+      'lucide-react',
+      '@radix-ui/react-toast',
+      '@radix-ui/react-dialog',
+      'framer-motion'
+    ],
+    cssChunking: true,
+    ppr: false,
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Configure webpack caching properly
+    if (dev) {
+      // Disable persistent caching in development to prevent corruption
+      config.cache = false;
+    } else {
+      // In production, use memory caching with safer settings
+      config.cache = {
+        type: 'memory',
+        maxGenerations: 1
+      };
+      
+      // Enable module concatenation for production
+      config.optimization.concatenateModules = true;
+    }
+    
+    return config;
   },
 }
 

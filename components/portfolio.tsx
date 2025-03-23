@@ -19,15 +19,24 @@ const projects = [
   },
   {
     id: "2",
-    title: "Patient Portal",
+    title: "Patient Portal Redesign",
     category: "UX Research & Design",
     description:
-      "An accessible patient portal that simplifies appointment scheduling, medical record access, and provider communication.",
+      "A complete redesign of a healthcare provider's patient portal to improve usability and accessibility.",
+    image: "/placeholder.svg?height=800&width=1200",
+    year: "2022",
+  },
+  {
+    id: "3",
+    title: "Medical Device Interface",
+    category: "Healthcare UX",
+    description:
+      "A touchscreen interface for a new medical diagnostic device used in clinical environments.",
     image: "/placeholder.svg?height=800&width=1200",
     year: "2023",
   },
   {
-    id: "3",
+    id: "4",
     title: "Healthcare Learning Platform",
     category: "UX/UI Design",
     description:
@@ -36,22 +45,13 @@ const projects = [
     year: "2022",
   },
   {
-    id: "4",
+    id: "5",
     title: "Medical Data Visualization",
     category: "UX Engineering",
     description:
       "Complex medical data visualized through intuitive charts and graphs for improved clinical decision-making.",
     image: "/placeholder.svg?height=800&width=1200",
     year: "2022",
-  },
-  {
-    id: "5",
-    title: "Telemedicine Application",
-    category: "UX/UI Design",
-    description:
-      "A secure video consultation platform connecting patients with healthcare providers for remote medical care.",
-    image: "/placeholder.svg?height=800&width=1200",
-    year: "2021",
   },
   {
     id: "6",

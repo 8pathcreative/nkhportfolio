@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { Menu } from "lucide-react"
 import { FullScreenMenu } from "./full-screen-menu"
 import { ThemeToggle } from "./theme-toggle"
 
@@ -43,9 +44,10 @@ export default function ExperimentalHeader() {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="text-sm font-medium py-2 px-4 rounded-full border border-border bg-background hover:bg-muted transition-colors"
+              className="w-12 h-12 flex items-center justify-center rounded-full border border-border bg-background hover:bg-muted transition-colors"
+              aria-label="Open menu"
             >
-              Menu
+              <Menu className="h-7 w-7" />
             </button>
           </div>
         </div>

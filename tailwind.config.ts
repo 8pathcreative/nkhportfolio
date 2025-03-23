@@ -12,14 +12,32 @@ const config = {
   ],
   prefix: "",
   theme: {
+    screens: {
+      'sm': '40rem',     // 640px
+      'md': '48rem',     // 768px
+      'lg': '64rem',     // 1024px
+      'xl': '80rem',     // 1280px
+      '2xl': '96rem',    // 1536px
+    },
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "87.5rem", // 1400px
       },
     },
     extend: {
+      fontSize: {
+        '1125': '1.125rem', // 18px
+        '125': '1.25rem',   // 20px
+        '15': '1.5rem',     // 24px
+        '2': '2rem',        // 32px
+        '25': '2.5rem',     // 40px
+        '3': '3rem',        // 48px
+        '375': '3.75rem',   // 60px
+        '45': '4.5rem',     // 72px
+        '5': '5rem',        // 80px
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

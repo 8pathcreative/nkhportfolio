@@ -1,18 +1,39 @@
-"use client"
-
 import dynamic from 'next/dynamic'
+import { Metadata } from "next"
 import ExperimentalHeader from "@/components/experimental-header"
+import { ExperimentalFeaturedProject, ExperimentalPortfolio } from "@/app/components/client-imports"
+import AlternateFooter from "@/components/alternate-footer"
+
+// Import critical above-the-fold components normally
 import Hero from "@/components/hero"
 import About from "@/components/about"
-import Skills from "@/components/skills"
-import Timeline from "@/components/timeline"
-import Testimonial from "@/components/testimonial"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
 
-// Dynamically import components that use client features to avoid hydration issues
-const ExperimentalFeaturedProject = dynamic(() => import("./featured-project"), { ssr: false })
-const ExperimentalPortfolio = dynamic(() => import("./portfolio"), { ssr: false })
+// Lazy-load below-the-fold components with loading placeholders
+const Skills = dynamic(() => import("@/components/skills"), { 
+  ssr: true,
+  loading: () => <div className="min-h-[500px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
+const Timeline = dynamic(() => import("@/components/timeline"), { 
+  ssr: true,
+  loading: () => <div className="min-h-[400px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
+const Testimonial = dynamic(() => import("@/components/testimonial"), { 
+  ssr: true,
+  loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
+const Contact = dynamic(() => import("@/components/contact"), { 
+  ssr: true,
+  loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
+
+export const metadata: Metadata = {
+  title: "Experimental Design | Neil Humphrey Portfolio",
+  description: "Explore the experimental UI designs and interactive elements for healthcare applications. Testing ground for innovative medical interface concepts.",
+  keywords: "UI experiments, healthcare design, interactive UI, experimental design, medical interfaces, UX innovation",
+  alternates: {
+    canonical: "/experimental",
+  },
+}
 
 export default function ExperimentalPage() {
   return (
@@ -26,7 +47,7 @@ export default function ExperimentalPage() {
       <Timeline />
       <Testimonial />
       <Contact />
-      <Footer />
+      <AlternateFooter />
     </main>
   )
 } 

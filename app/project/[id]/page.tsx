@@ -1,7 +1,21 @@
-import { ArrowLeft, ArrowRight, ExternalLink, Link } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
+import dynamic from 'next/dynamic'
+import Link from "next/link"
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
 import Header from "@/components/header"
-import Footer from "@/components/footer"
-import { Button } from "@/components/ui/button"
+
+// Lazy load non-critical components
+const Footer = dynamic(() => import("@/components/footer"), {
+  ssr: true,
+  loading: () => <div className="min-h-[100px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
+
+// Import only the icons used immediately
+const ProjectDetails = dynamic(() => import("@/components/project-details"), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
 
 // This would typically come from a database or CMS
 const projects = [
@@ -58,12 +72,143 @@ const projects = [
       },
     ],
   },
-  // Other projects would be defined here
+  {
+    id: "2",
+    title: "Patient Portal Redesign",
+    category: "UX/UI Design",
+    description:
+      "A complete redesign of a healthcare provider's patient portal to improve usability and accessibility.",
+    fullDescription:
+      "This patient portal redesign focused on improving the user experience for patients accessing their healthcare information and communicating with providers. The existing portal had poor usability metrics and was failing to meet accessibility standards.",
+    image: "/placeholder.svg?height=800&width=1200",
+    year: "2022",
+    client: "Regional Medical Center",
+    role: "UX Designer & Accessibility Specialist",
+    duration: "6 months",
+    technologies: ["React", "WCAG 2.1", "Figma", "Jest"],
+    challenge:
+      "The existing patient portal had low adoption rates due to confusing navigation, poor mobile experience, and accessibility barriers for users with disabilities.",
+    solution:
+      "I designed a simplified information architecture, consistent UI patterns, and fully accessible components that work across all devices and assistive technologies.",
+    outcome:
+      "Portal usage increased by 47% within 3 months of launch, and the solution achieved WCAG 2.1 AA compliance certification.",
+    process: [
+      {
+        title: "Accessibility Audit",
+        description:
+          "Conducted a comprehensive audit of the existing portal against WCAG 2.1 standards to identify barriers.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "User Research",
+        description:
+          "Interviewed patients including those with disabilities to understand their needs and pain points with the existing portal.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "Information Architecture",
+        description:
+          "Reorganized content and navigation based on user needs and common tasks.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "Accessible Design System",
+        description:
+          "Developed a design system with components that meet or exceed WCAG 2.1 AA standards.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "Usability Testing",
+        description:
+          "Conducted testing with screen readers and other assistive technologies to validate accessibility.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "Medical Device Interface",
+    category: "Healthcare UX",
+    description:
+      "A touchscreen interface for a new medical diagnostic device used in clinical environments.",
+    fullDescription:
+      "This project involved designing the touchscreen interface for a new diagnostic device used by clinicians in time-sensitive situations. The interface needed to be extremely intuitive, error-resistant, and usable while wearing PPE.",
+    image: "/placeholder.svg?height=800&width=1200",
+    year: "2023",
+    client: "Medical Device Manufacturer",
+    role: "Lead UX Designer",
+    duration: "9 months",
+    technologies: ["Qt", "Embedded Systems", "Figma", "Usability Testing"],
+    challenge:
+      "Clinicians needed to operate the device quickly and accurately while wearing gloves in high-stress environments with limited training time.",
+    solution:
+      "I created a simplified workflow with large touch targets, high-contrast visuals, and contextual help to guide users through complex procedures.",
+    outcome:
+      "The device received FDA approval with exceptional usability scores and 98% first-time user success rates in validation testing.",
+    process: [
+      {
+        title: "Contextual Inquiry",
+        description:
+          "Observed clinicians in their work environment to understand workflow constraints and environmental factors.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "Workflow Design",
+        description:
+          "Mapped out the ideal task flow to minimize cognitive load during critical procedures.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "Prototyping",
+        description:
+          "Created interactive prototypes for testing on hardware similar to the final device.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "Usability Testing",
+        description:
+          "Conducted simulated use scenarios with clinicians wearing PPE to validate usability.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+      {
+        title: "Design Documentation",
+        description:
+          "Prepared detailed specifications for the engineering team for implementation.",
+        image: "/placeholder.svg?height=600&width=800",
+      },
+    ],
+  }
 ]
 
+// Required for static export
+export function generateStaticParams() {
+  return projects.map(project => ({
+    id: project.id
+  }))
+}
+
+// Dynamic metadata
+export function generateMetadata({ params }: { params: { id: string } }): Metadata {
+  const project = projects.find(p => p.id === params.id)
+  
+  if (!project) {
+    return {
+      title: "Project Not Found"
+    }
+  }
+  
+  return {
+    title: `${project.title} | Neil Humphrey Portfolio`,
+    description: `Case study for ${project.title} - a healthcare UX project by Neil Humphrey.`
+  }
+}
+
 export default function ProjectPage({ params }: { params: { id: string } }) {
-  // Find the project by ID
-  const project = projects.find((p) => p.id === params.id) || projects[0]
+  const project = projects.find(p => p.id === params.id)
+  
+  if (!project) {
+    notFound()
+  }
 
   return (
     <>
@@ -80,137 +225,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               Back to all projects
             </Link>
 
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div>
-                <span className="text-sm uppercase tracking-wider text-muted-foreground">{project.category}</span>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-6">{project.title}</h1>
-                <p className="text-xl text-muted-foreground mb-8">{project.fullDescription}</p>
-
-                <div className="grid grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Client</h3>
-                    <p>{project.client}</p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Year</h3>
-                    <p>{project.year}</p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Role</h3>
-                    <p>{project.role}</p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Duration</h3>
-                    <p>{project.duration}</p>
-                  </div>
-                </div>
-
-                <div className="mb-8">
-                  <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Technologies</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
-                      <span key={index} className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <Button className="rounded-full">
-                  <Link href="#" className="inline-flex items-center">
-                    View Live Project
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={1200}
-                  height={800}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Challenge & Solution */}
-        <section className="py-16 px-4 bg-muted/30">
-          <div className="container mx-auto">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">The Challenge</h2>
-                <p className="text-muted-foreground">{project.challenge}</p>
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold mb-4">The Solution</h2>
-                <p className="text-muted-foreground">{project.solution}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Process */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Design Process</h2>
-
-            <div className="space-y-24">
-              {project.process.map((step, index) => (
-                <div
-                  key={index}
-                  className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "md:grid-flow-dense" : ""}`}
-                >
-                  <div className={index % 2 === 1 ? "md:col-start-2" : ""}>
-                    <span className="inline-block px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm mb-4">
-                      Step {index + 1}
-                    </span>
-                    <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                    <p className="text-muted-foreground">{step.description}</p>
-                  </div>
-                  <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                    <img
-                      src={step.image || "/placeholder.svg"}
-                      alt={step.title}
-                      width={800}
-                      height={600}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Outcome */}
-        <section className="py-16 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold mb-6">The Outcome</h2>
-            <p className="text-xl text-muted-foreground">{project.outcome}</p>
-          </div>
-        </section>
-
-        {/* Next/Prev Projects */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto">
-            <div className="flex justify-between">
-              <Link href="#" className="inline-flex items-center">
-                <Button className="rounded-full">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Previous Project
-                </Button>
-              </Link>
-
-              <Link href="#" className="inline-flex items-center">
-                <Button className="rounded-full">
-                  Next Project
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
+            <ProjectDetails project={project} />
           </div>
         </section>
       </main>
