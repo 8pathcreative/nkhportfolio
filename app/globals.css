@@ -200,7 +200,8 @@
 
 /* Sun and Moon icon animations */
 .sun {
-  animation: spin 20s linear infinite;
+  animation: spin 40s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(250, 204, 21, 0.7));
 }
 
 .moon {
@@ -218,10 +219,10 @@
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.5));
+    filter: drop-shadow(0 0 2px rgba(30, 64, 175, 0.5));
   }
   100% {
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.8));
+    filter: drop-shadow(0 0 10px rgba(30, 64, 175, 0.8));
   }
 }
 

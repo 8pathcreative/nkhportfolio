@@ -52,28 +52,28 @@ export default function ExperimentalHero() {
         >
           <span className="block">
             Design by{" "}
-            <span className="inline-flex items-center">
-              <svg className="sun h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 inline-block text-yellow-500 mr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3" strokeWidth="2" strokeLinecap="round"></line>
-                <line x1="12" y1="21" x2="12" y2="23" strokeWidth="2" strokeLinecap="round"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" strokeWidth="2" strokeLinecap="round"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" strokeWidth="2" strokeLinecap="round"></line>
-                <line x1="1" y1="12" x2="3" y2="12" strokeWidth="2" strokeLinecap="round"></line>
-                <line x1="21" y1="12" x2="23" y2="12" strokeWidth="2" strokeLinecap="round"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" strokeWidth="2" strokeLinecap="round"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" strokeWidth="2" strokeLinecap="round"></line>
+            <span className="inline-flex items-center gap-2 align-bottom">
+              <svg className="sun h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 inline-block text-yellow-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <circle cx="12" cy="12" r="5" fill="currentColor"></circle>
+                <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></line>
               </svg>
-              Day
+              <span>Day</span>
             </span>,
           </span>
           <span className="block">
             Code by{" "}
-            <span className="inline-flex items-center">
-              <svg className="moon h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 inline-block text-blue-800 mr-1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+            <span className="inline-flex items-center gap-2 align-bottom">
+              <svg className="moon h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 inline-block text-blue-800" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"></path>
               </svg>
-              Night
+              <span>Night</span>
             </span>.
           </span>
         </h1>
