@@ -1,8 +1,10 @@
-import type { DefaultSeoProps } from 'next-seo';
+import type { Metadata } from 'next';
 
-const config: DefaultSeoProps = {
-  titleTemplate: '%s | Neil Humphrey - UX Design Engineer',
-  defaultTitle: 'Neil Humphrey | Healthcare UX Design Engineer Portfolio',
+const config: Metadata = {
+  title: {
+    template: '%s | Neil Humphrey - UX Design Engineer',
+    default: 'Neil Humphrey | Healthcare UX Design Engineer Portfolio',
+  },
   description: 'Personal portfolio of Neil Humphrey, a UX design engineer based in Omaha, Nebraska specializing in medical and healthcare solutions.',
   openGraph: {
     type: 'website',

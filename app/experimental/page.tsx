@@ -1,38 +1,11 @@
 import { Metadata } from "next"
-import ExperimentalHeader from "@/components/experimental-header"
-import { ExperimentalFeaturedProject, ExperimentalPortfolio } from "@/app/components/client-imports"
-import AlternateFooter from "@/components/alternate-footer"
-import dynamicImport from 'next/dynamic'
-
-// Import critical above-the-fold components normally
-import ExperimentalHero from "@/components/experimental-hero"
-import About from "@/components/about"
-
-// Needed for static export
-export const dynamic = 'force-static'
-export const revalidate = false
-
-// Lazy-load below-the-fold components with loading placeholders
-const Skills = dynamicImport(() => import("@/components/skills"), { 
-  ssr: true,
-  loading: () => <div className="min-h-[500px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
-})
-const Timeline = dynamicImport(() => import("@/components/timeline"), { 
-  ssr: true,
-  loading: () => <div className="min-h-[400px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
-})
-const Testimonial = dynamicImport(() => import("@/components/testimonial"), { 
-  ssr: true,
-  loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
-})
-const Contact = dynamicImport(() => import("@/components/contact"), { 
-  ssr: true,
-  loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
-})
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { AlertCircle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Experimental Design | Neil Humphrey Portfolio",
-  description: "Explore the experimental UI designs and interactive elements for healthcare applications. Testing ground for innovative medical interface concepts.",
+  description: "Explore experimental UI designs and interactive elements for healthcare applications.",
   keywords: "UI experiments, healthcare design, interactive UI, experimental design, medical interfaces, UX innovation",
   alternates: {
     canonical: "/experimental",
@@ -42,16 +15,27 @@ export const metadata: Metadata = {
 export default function ExperimentalPage() {
   return (
     <main className="min-h-screen flex flex-col">
-      <ExperimentalHeader />
-      <ExperimentalHero />
-      <About />
-      <ExperimentalFeaturedProject />
-      <ExperimentalPortfolio />
-      <Skills />
-      <Timeline />
-      <Testimonial />
-      <Contact />
-      <AlternateFooter />
+      <div className="container mx-auto px-4 py-16">
+        <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg mb-8 flex items-center gap-3 text-amber-800">
+          <AlertCircle className="h-5 w-5" />
+          <p className="text-sm">
+            These experimental designs are only available in development mode and won't impact production performance.
+          </p>
+        </div>
+        
+        <h1 className="text-4xl font-bold mb-8">Experimental Designs</h1>
+        <div className="grid gap-6">
+          <div className="bg-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-bold mb-4">Alternate Home Design</h2>
+            <p className="text-muted-foreground mb-4">
+              A modern, minimalist design with animated wavy background and clean typography.
+            </p>
+            <Link href="/experimental/alternate-home">
+              <Button>View Design</Button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </main>
   )
 } 
