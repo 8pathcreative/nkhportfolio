@@ -33,6 +33,8 @@ const projects = [
     role: "Lead UX Designer & Developer",
     duration: "4 months",
     technologies: ["React", "TypeScript", "D3.js", "Figma"],
+    teamSize: "4 people",
+    tools: ["Figma", "React", "TypeScript", "D3.js"],
     challenge:
       "Healthcare professionals needed a way to quickly access and interpret patient data across multiple departments. The existing system was fragmented and required logging into multiple platforms.",
     solution:
@@ -86,6 +88,8 @@ const projects = [
     role: "UX Designer & Accessibility Specialist",
     duration: "6 months",
     technologies: ["React", "WCAG 2.1", "Figma", "Jest"],
+    teamSize: "3 people",
+    tools: ["Figma", "React", "WCAG 2.1", "Jest"],
     challenge:
       "The existing patient portal had low adoption rates due to confusing navigation, poor mobile experience, and accessibility barriers for users with disabilities.",
     solution:
@@ -139,6 +143,8 @@ const projects = [
     role: "Lead UX Designer",
     duration: "9 months",
     technologies: ["Qt", "Embedded Systems", "Figma", "Usability Testing"],
+    teamSize: "6 people",
+    tools: ["Qt", "Figma", "Usability Testing", "Embedded Systems"],
     challenge:
       "Clinicians needed to operate the device quickly and accurately while wearing gloves in high-stress environments with limited training time.",
     solution:
