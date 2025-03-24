@@ -22,6 +22,8 @@ type ProjectData = {
     description: string
     image: string
   }[]
+  teamSize: string
+  tools: string[]
 }
 
 interface ProjectDetailsProps {
@@ -85,15 +87,54 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
         </div>
       </div>
 
+      {/* Project Metrics */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* Timeline */}
+        <div className="bg-card p-6 rounded-xl shadow-lg">
+          <h3 className="text-lg font-semibold mb-2">Timeline</h3>
+          <p className="text-2xl font-bold">{project.duration}</p>
+        </div>
+        
+        {/* Role */}
+        <div className="bg-card p-6 rounded-xl shadow-lg">
+          <h3 className="text-lg font-semibold mb-2">My Role</h3>
+          <p className="text-2xl font-bold">{project.role}</p>
+        </div>
+        
+        {/* Team Size */}
+        <div className="bg-card p-6 rounded-xl shadow-lg">
+          <h3 className="text-lg font-semibold mb-2">Team Size</h3>
+          <p className="text-2xl font-bold">{project.teamSize}</p>
+        </div>
+        
+        {/* Tools */}
+        <div className="bg-card p-6 rounded-xl shadow-lg">
+          <h3 className="text-lg font-semibold mb-2">Tools</h3>
+          <div className="flex flex-wrap gap-2">
+            {project.tools.map((tool, index) => (
+              <span
+                key={index}
+                className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Challenge & Solution */}
       <section className="py-16 px-4 bg-muted/30 mt-12 -mx-4">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Challenge */}
+            <div className="bg-card p-6 rounded-xl shadow-lg">
               <h2 className="text-2xl font-bold mb-4">The Challenge</h2>
               <p className="text-muted-foreground">{project.challenge}</p>
             </div>
-            <div>
+            
+            {/* Solution */}
+            <div className="bg-card p-6 rounded-xl shadow-lg">
               <h2 className="text-2xl font-bold mb-4">The Solution</h2>
               <p className="text-muted-foreground">{project.solution}</p>
             </div>
@@ -119,7 +160,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                   <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
                 </div>
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
                   <img
                     src={step.image || "/placeholder.svg"}
                     alt={step.title}
@@ -136,32 +177,38 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
 
       {/* Outcome */}
       <section className="py-16 px-4 bg-muted/30 -mx-4">
-        <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold mb-6">The Outcome</h2>
-          <p className="text-xl text-muted-foreground">{project.outcome}</p>
+        <div className="container mx-auto">
+          <div className="bg-card p-6 rounded-xl shadow-lg mb-12">
+            <h2 className="text-2xl font-bold mb-4">The Outcome</h2>
+            <p className="text-muted-foreground">{project.outcome}</p>
+          </div>
         </div>
       </section>
 
       {/* Next/Prev Projects */}
-      <section className="py-16 px-4 -mx-4">
-        <div className="container mx-auto">
-          <div className="flex justify-between">
-            <Link href="#" className="inline-flex items-center">
-              <Button className="rounded-full">
-                <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-                Previous Project
-              </Button>
-            </Link>
-
-            <Link href="#" className="inline-flex items-center">
-              <Button className="rounded-full">
-                Next Project
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div className="flex flex-col sm:flex-row justify-between gap-6 mt-12">
+        {/* Previous Project */}
+        <Link href="#" className="bg-card p-6 rounded-xl shadow-lg flex-1 group hover:shadow-xl transition-all">
+          <Button variant="ghost" className="flex items-center w-full justify-start p-0">
+            <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
+            <div className="flex flex-col items-start">
+              <span className="text-sm text-muted-foreground">Previous Project</span>
+              <span className="text-xl font-semibold group-hover:text-primary transition-colors">Project Title</span>
+            </div>
+          </Button>
+        </Link>
+        
+        {/* Next Project */}
+        <Link href="#" className="bg-card p-6 rounded-xl shadow-lg flex-1 text-right group hover:shadow-xl transition-all">
+          <Button variant="ghost" className="flex items-center w-full justify-end p-0">
+            <div className="flex flex-col items-end">
+              <span className="text-sm text-muted-foreground">Next Project</span>
+              <span className="text-xl font-semibold group-hover:text-primary transition-colors">Project Title</span>
+            </div>
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
+      </div>
     </>
   )
 } 
