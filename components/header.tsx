@@ -34,6 +34,18 @@ export default function Header() {
               <Menu className="h-7 w-7 sm:h-8 sm:w-8" />
             </Button>
           </div>
+
+          <div className="flex gap-4 items-center">
+            <Link href="/" className="text-sm text-foreground transition-colors hover:text-foreground/80">
+              Home
+            </Link>
+            <Link href="/experimental" className="text-sm text-foreground transition-colors hover:text-foreground/80">
+              Experimental
+            </Link>
+            <Link href="/gleamy" className="text-sm text-foreground/80 transition-colors hover:text-blue-400">
+              Gleamy
+            </Link>
+          </div>
         </div>
       </header>
 
