@@ -1,3 +1,5 @@
+"use client";
+
 import { Metadata } from "next";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -5,12 +7,8 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 import { SparklesCore } from "@/components/ui/sparkles";
 
 export const metadata: Metadata = {
-  title: "Gleamy Design | Neil Humphrey Portfolio",
-  description: "Modern agency-style design with animated background effects",
-  keywords: "UX design, creative agency, gleamy, modern UI, interactive design",
-  alternates: {
-    canonical: "/gleamy",
-  },
+  title: "Gleamy Design | Test Page",
+  description: "A test page with agency-style design",
 };
 
 export default function GleamyPage() {
@@ -35,13 +33,13 @@ export default function GleamyPage() {
             <span className="absolute text-white font-bold">G</span>
           </div>
           <div className="text-white text-sm flex gap-2">
-            <Link href="/" className="hover:text-blue-400 transition-colors">FB</Link>
+            <a href="#" className="hover:text-blue-400 transition-colors">FB</a>
             <span className="text-neutral-500">•</span>
-            <Link href="/" className="hover:text-blue-400 transition-colors">IN</Link>
+            <a href="#" className="hover:text-blue-400 transition-colors">IN</a>
             <span className="text-neutral-500">•</span>
-            <Link href="/" className="hover:text-blue-400 transition-colors">DR</Link>
+            <a href="#" className="hover:text-blue-400 transition-colors">DR</a>
             <span className="text-neutral-500">•</span>
-            <Link href="/" className="hover:text-blue-400 transition-colors">BE</Link>
+            <a href="#" className="hover:text-blue-400 transition-colors">BE</a>
           </div>
         </div>
         
@@ -92,34 +90,34 @@ export default function GleamyPage() {
           
           {/* Main heading */}
           <div className="container mx-auto max-w-6xl">
-            <h1 className="text-7xl font-bold leading-tight mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
               <span className="text-white">Brand.</span>
               <span className="text-gray-500">Design.</span>
               <span className="text-gray-500">Product.</span>
             </h1>
             
-            <h2 className="text-7xl font-bold text-white leading-tight mb-8">
+            <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
               In-House Development.
             </h2>
             
-            <h3 className="text-7xl font-bold text-white">
+            <h3 className="text-5xl md:text-7xl font-bold text-white">
               &More
             </h3>
           </div>
           
           {/* Bottom diagonal ribbon */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-neutral-800 -rotate-[4deg] -translate-y-10 scale-110 transform-gpu">
-            <div className="flex items-center h-full justify-around transform rotate-[4deg] px-8">
+            <div className="flex items-center h-full justify-around transform rotate-[4deg] px-8 overflow-x-auto whitespace-nowrap">
               <span className="uppercase text-neutral-400 font-bold">Creative Design</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">UI/UX</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Marketing</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Motion</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Animation</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Branding</span>
             </div>
           </div>
@@ -145,6 +143,16 @@ export default function GleamyPage() {
           </div>
         </main>
       </TracingBeam>
+      
+      {/* Link back to home */}
+      <div className="absolute bottom-4 left-4 z-50">
+        <Link href="/" className="text-white/70 hover:text-white text-sm flex items-center gap-1 transition-colors">
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          Back to portfolio
+        </Link>
+      </div>
     </div>
   );
 } 
