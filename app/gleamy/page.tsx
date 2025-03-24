@@ -1,15 +1,9 @@
 "use client";
 
-import { Metadata } from "next";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { SparklesCore } from "@/components/ui/sparkles";
-
-export const metadata: Metadata = {
-  title: "Gleamy Design | Test Page",
-  description: "A test page with agency-style design",
-};
 
 export default function GleamyPage() {
   return (
