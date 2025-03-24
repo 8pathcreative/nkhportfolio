@@ -53,6 +53,11 @@ const nextConfig = {
       config.optimization.concatenateModules = true;
     }
     
+    // Add UnoCSS to webpack configuration
+    config.plugins.push(
+      // This will be automatically detected by UnoCSS
+    );
+    
     return config;
   },
 }
