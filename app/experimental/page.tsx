@@ -34,6 +34,16 @@ export default function ExperimentalPage() {
               <Button>View Design</Button>
             </Link>
           </div>
+          
+          <div className="bg-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-bold mb-4">Alternate Home Design V2</h2>
+            <p className="text-muted-foreground mb-4">
+              A sleek, dark agency design inspired by Gleamy with vertical navigation and circular elements.
+            </p>
+            <Link href="/experimental/alternate-home-version-2">
+              <Button>View Design</Button>
+            </Link>
+          </div>
         </div>
       </div>
     </main>
