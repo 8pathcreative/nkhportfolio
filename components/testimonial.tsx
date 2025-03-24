@@ -6,7 +6,7 @@ export default function Testimonial() {
   return (
     <section className="py-16 px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-medium mb-12">Testimonial</h2>
+        <h2 className="text-2xl md:text-3xl font-medium mb-12">Some Kind Words</h2>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="relative aspect-video rounded-lg overflow-hidden">
