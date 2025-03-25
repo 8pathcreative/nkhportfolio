@@ -7,6 +7,9 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['InterVariable', 'sans-serif'],
+    },
     // Set custom breakpoints using Tailwind CSS 4 syntax with REM values
     screens: {
       'sm': '40rem',    // 640px

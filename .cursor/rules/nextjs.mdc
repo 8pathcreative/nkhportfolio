@@ -62,4 +62,5 @@ alwaysApply: true
 - Implement proper error handling and fallback UI
 - Use TypeScript for type safety when possible
 - Write unit tests for components and utility functions
+- ALWAYS DESIGN FOR MOBILE, Ensure every page is responsive on ALL Devices
   
