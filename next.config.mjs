@@ -13,7 +13,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: 'export',
   images: {
     remotePatterns: [
       {
@@ -22,7 +21,7 @@ const nextConfig = {
         pathname: '**',
       },
     ],
-    unoptimized: true,
+    unoptimized: false,
   },
   experimental: {
     webpackBuildWorker: true,
