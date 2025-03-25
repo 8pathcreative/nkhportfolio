@@ -195,7 +195,9 @@ export function generateStaticParams() {
 
 // Dynamic metadata
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const id = params.id;
+  if (!params) return { title: "Project Not Found" };
+  
+  const id = String(params.id);
   const project = projects.find(p => p.id === id)
   
   if (!project) {
@@ -211,7 +213,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 export default async function ProjectPage({ params }: { params: { id: string } }) {
-  const id = params.id;
+  if (!params) notFound();
+  
+  const id = String(params.id);
   const project = projects.find(p => p.id === id)
   
   if (!project) {

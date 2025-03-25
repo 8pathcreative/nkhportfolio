@@ -6,20 +6,45 @@ import { motion } from 'framer-motion'
 
 export default function HeroImageV2() {
   const [scrollY, setScrollY] = useState(0)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
     }
     
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: e.clientX / window.innerWidth,
+        y: e.clientY / window.innerHeight
+      })
+    }
+    
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('mousemove', handleMouseMove)
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-transparent text-white overflow-hidden z-10">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      
+      {/* Enhanced Shadow Effect - darker & more dramatic */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 80%)`,
+          opacity: 0.6
+        }}
+      />
+      
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center">
+      <nav className="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-sm bg-black/10">
         <Link href="/design-examples" className="text-lg font-semibold tracking-wide">
           FORSBERG
         </Link>
@@ -78,6 +103,31 @@ export default function HeroImageV2() {
           </motion.div>
         </div>
         
+        {/* Animated elements for lightning effect */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+          <div className="lightning" style={{ '--lightning-delay': '0' } as React.CSSProperties}>
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5L65 40H85L50 95L35 60H15L50 5Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="absolute right-1/4 top-1/3 opacity-5 pointer-events-none">
+          <div className="lightning" style={{ '--lightning-delay': '2' } as React.CSSProperties}>
+            <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5L65 40H85L50 95L35 60H15L50 5Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="absolute left-1/4 bottom-1/3 opacity-5 pointer-events-none">
+          <div className="lightning" style={{ '--lightning-delay': '3.5' } as React.CSSProperties}>
+            <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5L65 40H85L50 95L35 60H15L50 5Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
+        
         {/* Giant Name at Bottom */}
         <motion.div 
           className="relative z-10"
@@ -87,7 +137,7 @@ export default function HeroImageV2() {
           }}
         >
           <h2 className="text-[12vw] sm:text-[14vw] font-bold leading-none tracking-tighter">
-            FORSBERG
+            Design Engineer
           </h2>
         </motion.div>
       </div>

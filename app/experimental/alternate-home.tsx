@@ -1,92 +1,91 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Moon, Menu } from "lucide-react";
+import { MoonIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
 
 export default function AlternateHome() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-medium tracking-wider">
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-neutral-200 to-neutral-500">
-              Neil Humphrey
-            </span>
-          </Link>
-          
-          <div className="flex items-center gap-8">
-            <ul className="hidden md:flex gap-8">
-              <li>
-                <a href="#about" className="text-sm hover:text-neutral-400 transition-colors">About</a>
-              </li>
-              <li>
-                <a href="#work" className="text-sm hover:text-neutral-400 transition-colors">Work</a>
-              </li>
-              <li>
-                <a href="#skills" className="text-sm hover:text-neutral-400 transition-colors">Skills</a>
-              </li>
-              <li>
-                <a href="#contact" className="text-sm hover:text-neutral-400 transition-colors">Contact</a>
-              </li>
-            </ul>
-            <Button variant="ghost" size="icon" className="rounded-full">
-              <Moon className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="icon" className="md:hidden rounded-full">
-              <Menu className="h-6 w-6" />
-            </Button>
+    <div className="relative flex min-h-screen flex-col bg-zinc-950 text-white">
+      {/* Navbar */}
+      <header className="w-full border-b border-zinc-800 py-4">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="block h-6 w-6 rounded-full bg-white"></span>
+              <span className="text-sm font-medium uppercase tracking-wider">Neil Humphrey</span>
+            </div>
+            
+            <nav className="hidden space-x-6 text-sm font-medium md:flex">
+              <a href="#" className="transition-colors hover:text-zinc-400">About</a>
+              <a href="#" className="transition-colors hover:text-zinc-400">Skills</a>
+              <a href="#" className="transition-colors hover:text-zinc-400">Work</a>
+              <a href="#" className="transition-colors hover:text-zinc-400">Contact</a>
+            </nav>
+            
+            <div className="flex items-center">
+              <Button variant="ghost" size="icon" className="text-zinc-200 hover:bg-zinc-800 hover:text-white">
+                <MoonIcon className="h-5 w-5" />
+              </Button>
+              <Button variant="outline" className="ml-4 border-zinc-700 text-sm hover:bg-zinc-800 hover:border-zinc-600">
+                Resume
+              </Button>
+            </div>
           </div>
-        </nav>
+        </div>
       </header>
 
-      {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
-        <div className="relative w-32 h-32 mb-8">
-          <Image
-            src="public/neil-profile.jpg"
-            alt="Neil Humphrey"
-            fill
-            className="rounded-full object-cover"
-            priority
-          />
+      {/* Main Content */}
+      <section className="section-lg flex items-center justify-center">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="relative w-32 h-32 mb-8">
+              <Image
+                src="/neil-profile.jpg"
+                alt="Neil Humphrey"
+                fill
+                className="rounded-full object-cover"
+                priority
+              />
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-purple-400 via-blue-400 to-blue-600 bg-clip-text text-transparent">
+              Design Engineer
+            </h1>
+            <p className="text-xl md:text-2xl text-neutral-400 max-w-2xl" style={{ marginBottom: "var(--content-gap-lg)" }}>
+              I bridge the gap between design and development, crafting beautiful,
+              functional, and accessible digital experiences.
+            </p>
+            <div className="flex gap-4">
+              <Button
+                size="lg"
+                className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              >
+                View My Work
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-neutral-800 hover:bg-neutral-900"
+              >
+                Get In Touch
+              </Button>
+            </div>
+          </div>
         </div>
-        <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-purple-400 via-blue-400 to-blue-600 bg-clip-text text-transparent">
-          Design Engineer
-        </h1>
-        <p className="text-xl md:text-2xl text-neutral-400 max-w-2xl mb-12">
-          I bridge the gap between design and development, crafting beautiful,
-          functional, and accessible digital experiences.
-        </p>
-        <div className="flex gap-4">
-          <Button
-            size="lg"
-            className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-          >
-            View My Work
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-neutral-800 hover:bg-neutral-900"
-          >
-            Get In Touch
-          </Button>
-        </div>
-      </main>
+      </section>
 
       {/* Footer */}
-      <footer className="py-6 px-6 border-t border-neutral-900">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-neutral-400">Based In Omaha</span>
-            <span className="text-neutral-600">🇺🇸</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
-            <span className="text-sm text-neutral-400">Available for Work</span>
+      <footer className="py-6 px-6 border-t border-neutral-900 mt-auto">
+        <div className="container mx-auto">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-neutral-400">Based In Omaha</span>
+              <span className="text-neutral-600">🇺🇸</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
+              <span className="text-sm text-neutral-400">Available for Work</span>
+            </div>
           </div>
         </div>
       </footer>

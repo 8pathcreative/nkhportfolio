@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type SectionSize = "sm" | "md" | "lg" | "xl";
 
-interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   size?: SectionSize;
   container?: boolean;
@@ -32,12 +32,12 @@ export function Section({
   className,
   ...props
 }: SectionProps) {
-  // Map size to padding values based on the design system
+  // Map size to standardized spacing classes
   const sizeClasses = {
-    sm: "py-12 md:py-16 lg:py-24", // var(--section-spacing-sm)
-    md: "py-16 md:py-24 lg:py-32", // var(--section-spacing)
-    lg: "py-20 md:py-28 lg:py-36", // Large section
-    xl: "py-24 md:py-32 lg:py-40", // Extra large section
+    sm: "py-section-y-sm", // Small section spacing
+    md: "py-section-y-md", // Medium section spacing (default)
+    lg: "py-section-y-lg", // Large section spacing
+    xl: "py-section-y-xl", // Extra large section spacing
   };
 
   return (
@@ -87,7 +87,7 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "mb-12 md:mb-16",
+        "section-heading",
         {
           "text-left": align === "left",
           "text-center": align === "center",
@@ -97,7 +97,7 @@ export function SectionHeader({
       )}
     >
       <h2 className={cn(
-        "text-3xl md:text-4xl font-medium mb-4 md:mb-6", 
+        "text-3xl md:text-4xl font-medium mb-content-gap-sm", 
         titleClassName
       )}>
         {title}
@@ -129,7 +129,7 @@ export function SectionContent({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("space-y-6", className)}
+      className={cn("content-gap", className)}
       {...props}
     >
       {children}

@@ -36,7 +36,7 @@ export default function DesignExamplesPage() {
             <div className="aspect-video w-full bg-black relative overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/70 to-black/95 text-white">
                 <div className="p-8 text-center">
-                  <h2 className="text-3xl font-bold mb-2">FORSBERG</h2>
+                  <h2 className="text-3xl font-bold mb-2">Design Engineer</h2>
                   <p className="text-sm text-gray-300">Dark, bold typography design</p>
                 </div>
               </div>

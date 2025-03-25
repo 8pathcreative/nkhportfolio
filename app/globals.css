@@ -150,12 +150,26 @@
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
     
-    /* Layout measurements */
-    --header-height: 4rem; /* 64px - matches py-4 in the header */
-    --section-spacing: 6rem; /* 96px - consistent spacing between sections */
-    --section-padding: 3rem; /* 48px - padding within sections (y-axis) */
-    --section-spacing-sm: 3rem; /* 48px - smaller spacing for mobile */
-    --section-padding-sm: 2rem; /* 32px - smaller padding for mobile */
+    /* Standardized spacing */
+    --header-height: 4rem; /* 64px */
+    --spacing-xs: 0.75rem; /* 12px */
+    --spacing-sm: 1.5rem;  /* 24px */
+    --spacing-md: 2rem;    /* 32px */
+    --spacing-lg: 3rem;    /* 48px */
+    --spacing-xl: 4rem;    /* 64px */
+    --spacing-2xl: 6rem;   /* 96px */
+    --spacing-3xl: 8rem;   /* 128px */
+    
+    /* Section spacing - consistent across site */
+    --section-spacing-sm: var(--spacing-xl);  /* 4rem/64px */
+    --section-spacing: var(--spacing-2xl);    /* 6rem/96px */
+    --section-spacing-lg: var(--spacing-3xl); /* 8rem/128px */
+    
+    /* Content spacing - for inner elements */
+    --content-gap-xs: var(--spacing-xs); /* 0.75rem/12px */
+    --content-gap-sm: var(--spacing-sm); /* 1.5rem/24px */
+    --content-gap: var(--spacing-md);    /* 2rem/32px */
+    --content-gap-lg: var(--spacing-lg); /* 3rem/48px */
   }
 
   .dark {
@@ -252,6 +266,56 @@
     );
   }
 
+  /* Grid Pattern Background */
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+  
+  /* Lightning Flash Animation */
+  @keyframes lightning-flash {
+    0% {
+      opacity: 0;
+      filter: blur(0px);
+    }
+    5% {
+      opacity: 0.2;
+      filter: blur(0px);
+    }
+    10% {
+      opacity: 0.1;
+      filter: blur(1px);
+    }
+    15% {
+      opacity: 0.8;
+      filter: blur(0px);
+    }
+    20% {
+      opacity: 0.1;
+      filter: blur(1px);
+    }
+    30% {
+      opacity: 0.2;
+      filter: blur(0px);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+    100% {
+      opacity: 0;
+      filter: blur(1px);
+    }
+  }
+  
+  .lightning {
+    animation: lightning-flash 5s infinite;
+    animation-delay: calc(var(--lightning-delay, 0) * 1s);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+
   /* Portfolio image hover effect */
 }
 
@@ -319,13 +383,33 @@
   }
 }
 
-/* Standard section styling */
-.section-spacing {
-  @apply relative py-16 md:py-24 lg:py-32;
+/* Standard section spacing classes */
+.section-sm {
+  padding-top: var(--section-spacing-sm);
+  padding-bottom: var(--section-spacing-sm);
 }
 
-.section-spacing-sm {
-  @apply relative py-12 md:py-16 lg:py-24;
+.section-md {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+}
+
+.section-lg {
+  padding-top: var(--section-spacing-lg);
+  padding-bottom: var(--section-spacing-lg);
+}
+
+/* Content gap spacing classes */
+.content-gap-sm {
+  gap: var(--content-gap-sm);
+}
+
+.content-gap {
+  gap: var(--content-gap);
+}
+
+.content-gap-lg {
+  gap: var(--content-gap-lg);
 }
 
 .divider {
@@ -334,11 +418,11 @@
 
 /* Section heading spacing */
 .section-heading {
-  @apply mb-8 md:mb-8 lg:mb-8;
+  margin-bottom: var(--content-gap-lg);
 }
 
 .section-subheading {
-  @apply mb-12 md:mb-16 lg:mb-20;
+  margin-bottom: var(--content-gap);
 }
 
 /* Sun and Moon icon animations */

@@ -21,6 +21,7 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
   experimental: {
     webpackBuildWorker: true,
@@ -30,10 +31,13 @@ const nextConfig = {
       'lucide-react',
       '@radix-ui/react-toast',
       '@radix-ui/react-dialog',
-      'framer-motion'
+      'framer-motion',
+      '@radix-ui/react-*'
     ],
     cssChunking: true,
     ppr: false,
+    serverMinification: true,
+    serverSourceMaps: false,
   },
   webpack: (config, { dev, isServer }) => {
     // Configure webpack caching properly

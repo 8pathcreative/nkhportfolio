@@ -1,15 +1,28 @@
 import { Metadata } from 'next'
 import HeroImageV2 from '@/components/hero-image-v2'
 import Link from 'next/link'
+import LightningWrapper from './lightning-wrapper'
 
 export const metadata: Metadata = {
   title: 'FORSBERG Design | Neil Humphrey',
-  description: 'A bold, minimal portfolio design with large typography',
+  description: 'A bold, minimal portfolio design with large typography and WebGL lightning effects',
 }
 
 export default function ForsbergDesignPage() {
   return (
-    <>
+    <div className="relative min-h-screen overflow-hidden">
+      {/* WebGL Lightning Effect */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <LightningWrapper
+          hue={200}
+          xOffset={0}
+          speed={1.2}
+          intensity={1.5}
+          size={1.2}
+        />
+      </div>
+      
+      {/* Main Content */}
       <HeroImageV2 />
       
       {/* Quick Back Link */}
@@ -24,6 +37,6 @@ export default function ForsbergDesignPage() {
           <span className="text-sm">Back to examples</span>
         </Link>
       </div>
-    </>
+    </div>
   )
 } 

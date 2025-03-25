@@ -1,8 +1,14 @@
 /** @type {import('postcss-load-config').Config} */
 const config = {
   plugins: {
+    'postcss-import': {},
     '@tailwindcss/postcss': {},
-    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {})
+    'autoprefixer': {},
+    ...(process.env.NODE_ENV === 'production' ? { 
+      cssnano: {
+        preset: ['default', { discardComments: { removeAll: true } }]
+      } 
+    } : {})
   },
 };
 
