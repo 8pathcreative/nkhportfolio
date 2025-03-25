@@ -1,12 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-// Use Inter font for clean typography
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Blog Design Concept',
-  description: 'An experimental blog design concept page',
+  title: 'Blog Concept | Design Example',
+  description: 'An experimental blog design concept with a dark, minimal aesthetic',
 }
 
 export default function BlogConceptLayout({
@@ -15,8 +11,9 @@ export default function BlogConceptLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={inter.className}>
+    <>
+      <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       {children}
-    </div>
+    </>
   )
 } 
