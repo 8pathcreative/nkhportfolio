@@ -76,7 +76,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             </Link>
           </Button>
         </div>
-        <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+        <div className="relative aspect-4/3 rounded-lg overflow-hidden">
           <img
             src={project.image || "/placeholder.svg"}
             alt={project.title}
@@ -160,7 +160,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                   <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
                 </div>
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                <div className="relative aspect-4/3 rounded-xl overflow-hidden shadow-lg">
                   <img
                     src={step.image || "/placeholder.svg"}
                     alt={step.title}

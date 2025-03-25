@@ -85,7 +85,7 @@ export default function ExperimentalPortfolio() {
               <div className="block">
                 <Link href={`/project/${project.id}`} className="block">
                   <CardContainer className="w-full" containerClassName="py-4">
-                    <CardBody className="w-full h-auto relative aspect-[4/3] rounded-lg overflow-hidden border border-border">
+                    <CardBody className="w-full h-auto relative aspect-4/3 rounded-lg overflow-hidden border border-border">
                       <CardItem translateZ="100" className="w-full h-full">
                         <Image
                           src={project.image || "/placeholder.svg"}

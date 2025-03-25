@@ -85,7 +85,7 @@ export default function Portfolio() {
             >
               <Link href={`/project/${project.id}`} className="block">
                 <CardContainer className="w-full" containerClassName="py-4">
-                  <CardBody className="w-full h-auto relative aspect-[4/3] rounded-lg overflow-hidden border border-border">
+                  <CardBody className="w-full h-auto relative aspect-4/3 rounded-lg overflow-hidden border border-border">
                     <CardItem translateZ="100" className="w-full h-full">
                       <Image
                         src={project.image || "/placeholder.svg"}
@@ -103,7 +103,7 @@ export default function Portfolio() {
                     >
                       <CardItem 
                         translateZ="100" 
-                        className="text-white font-medium px-6 py-3 border border-white/30 rounded-full backdrop-blur-sm w-auto"
+                        className="text-white font-medium px-6 py-3 border border-white/30 rounded-full backdrop-blur-xs w-auto"
                       >
                         View Case Study
                       </CardItem>

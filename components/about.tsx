@@ -7,7 +7,7 @@ import { ShootingStarField, StarsField } from "./ui/shooting-stars"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-28 lg:py-36 px-4 relative overflow-hidden bg-gradient-to-b from-black to-slate-950">
+    <section id="about" className="py-20 md:py-28 lg:py-36 px-4 relative overflow-hidden bg-linear-to-b from-black to-slate-950">
       <ShootingStarField quantity={15} />
       <StarsField quantity={100} />
       
@@ -59,7 +59,7 @@ export default function About() {
 
         <h3 className="text-2xl font-medium mb-8 md:mb-12 mt-16 md:mt-24 lg:mt-32">Tools I Work With</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
-          <div className="bg-neutral-900/50 backdrop-blur-sm rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
+          <div className="bg-neutral-900/50 backdrop-blur-xs rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
             <div className="flex flex-col items-center mb-4">
               <div className="w-16 h-16 flex items-center justify-center mb-3">
                 <svg viewBox="0 0 180 180" className="w-12 h-12 text-white">
@@ -89,7 +89,7 @@ export default function About() {
             <p className="text-sm text-neutral-400 text-center">React framework for building server-rendered applications with excellent developer experience.</p>
           </div>
 
-          <div className="bg-neutral-900/50 backdrop-blur-sm rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
+          <div className="bg-neutral-900/50 backdrop-blur-xs rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
             <div className="flex flex-col items-center mb-4">
               <div className="w-16 h-16 flex items-center justify-center mb-3">
                 <svg viewBox="0 0 38 57" className="w-10 h-10" fill="none">
@@ -113,7 +113,7 @@ export default function About() {
             <p className="text-sm text-neutral-400 text-center">Collaborative design tool that enables creating detailed interfaces and prototypes.</p>
           </div>
 
-          <div className="bg-neutral-900/50 backdrop-blur-sm rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
+          <div className="bg-neutral-900/50 backdrop-blur-xs rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
             <div className="flex flex-col items-center mb-4">
               <div className="w-16 h-16 flex items-center justify-center mb-3">
                 <svg viewBox="0 0 512 512" className="w-12 h-12">

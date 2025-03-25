@@ -1,8 +1,130 @@
-@config "../tailwind.config.ts";
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  --text-2: 2rem;
+  --text-3: 3rem;
+  --text-5: 5rem;
+  --text-15: 1.5rem;
+  --text-25: 2.5rem;
+  --text-45: 4.5rem;
+  --text-125: 1.25rem;
+  --text-375: 3.75rem;
+  --text-1125: 1.125rem;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-sans: var(--font-inter);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-border: border 4s ease infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes border {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 87.5rem) {
+    max-width: 87.5rem;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility portfolio-image {
+  @apply transition-all duration-700 ease-in-out;
+
+  .portfolio-image-container:hover & {
+    @apply scale-105;
+  }
+}
+@utility portfolio-image-container {
+  &:hover .portfolio-image {
+    @apply scale-105;
+  }
+}
 
 @layer base {
   :root {
@@ -69,50 +191,68 @@
   }
 }
 
-/* Custom REM-based text size utilities */
-.text-1rem { font-size: 1rem; }
-.text-1125rem { font-size: 1.125rem; } /* 18px */
-.text-125rem { font-size: 1.25rem; } /* 20px */
-.text-15rem { font-size: 1.5rem; } /* 24px */
-.text-2rem { font-size: 2rem; } /* 32px */
-.text-25rem { font-size: 2.5rem; } /* 40px */
-.text-3rem { font-size: 3rem; } /* 48px */
-.text-375rem { font-size: 3.75rem; } /* 60px */
-.text-45rem { font-size: 4.5rem; } /* 72px */
-.text-5rem { font-size: 5rem; } /* 80px */
+@layer utilities {
+  /* Custom REM-based text size utilities */
+  .text-1rem {
+    font-size: 1rem;
+  }
+  .text-1125rem {
+    font-size: 1.125rem;
+  } /* 18px */
+  .text-125rem {
+    font-size: 1.25rem;
+  } /* 20px */
+  .text-15rem {
+    font-size: 1.5rem;
+  } /* 24px */
+  .text-2rem {
+    font-size: 2rem;
+  } /* 32px */
+  .text-25rem {
+    font-size: 2.5rem;
+  } /* 40px */
+  .text-3rem {
+    font-size: 3rem;
+  } /* 48px */
+  .text-375rem {
+    font-size: 3.75rem;
+  } /* 60px */
+  .text-45rem {
+    font-size: 4.5rem;
+  } /* 72px */
+  .text-5rem {
+    font-size: 5rem;
+  } /* 80px */
 
-.gradient-text {
-  background: linear-gradient(to right, #4ecdc4, #2cb5e8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.day-gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500;
-}
-
-.night-gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-blue-900;
-}
-
-.divider {
-  @apply h-px bg-gradient-to-r from-transparent via-border/70 to-transparent;
-}
-
-.dark .divider {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
-}
-
-/* Portfolio image hover effect */
-@layer components {
-  .portfolio-image {
-    @apply transition-all duration-700 ease-in-out;
+  .gradient-text {
+    background: linear-gradient(to right, #4ecdc4, #2cb5e8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .portfolio-image-container:hover .portfolio-image {
-    @apply scale-105;
+  .day-gradient-text {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-yellow-300 to-yellow-500;
   }
+
+  .night-gradient-text {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-blue-800 to-blue-900;
+  }
+
+  .divider {
+    @apply h-px bg-linear-to-r from-transparent via-border/70 to-transparent;
+  }
+
+  .dark .divider {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0),
+      rgba(255, 255, 255, 0.1),
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  /* Portfolio image hover effect */
 }
 
 .border-magic-button-inner {
@@ -189,7 +329,7 @@
 }
 
 .divider {
-  @apply h-px bg-gradient-to-r from-transparent via-border/70 to-transparent;
+  @apply h-px bg-linear-to-r from-transparent via-border/70 to-transparent;
 }
 
 /* Section heading spacing */

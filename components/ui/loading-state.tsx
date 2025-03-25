@@ -104,7 +104,7 @@ export function LoadingState({
     <div
       className={cn(
         "flex flex-col items-center justify-center",
-        fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm",
+        fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-xs",
         !fullScreen && "w-full h-full min-h-[100px]",
         className
       )}

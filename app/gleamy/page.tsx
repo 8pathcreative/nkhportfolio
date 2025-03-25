@@ -57,24 +57,24 @@ export default function GleamyPage() {
       
       <TracingBeam className="px-6">
         {/* Main Content */}
-        <main className="flex-grow flex flex-col relative z-10 pt-12 lg:pt-24">
+        <main className="grow flex flex-col relative z-10 pt-12 lg:pt-24">
           {/* Diagonal ribbons */}
           <div className="absolute top-0 right-0 h-full w-full overflow-hidden pointer-events-none">
-            <div className="absolute -rotate-[30deg] top-1/3 -right-20 translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 w-[600px] transform-gpu">
+            <div className="absolute -rotate-[30deg] top-1/3 -right-20 translate-y-1/2 bg-white/10 backdrop-blur-xs p-3 w-[600px] transform-gpu">
               <div className="flex items-center justify-around">
                 <span className="text-white/80 uppercase text-lg font-semibold tracking-wider">Marketing</span>
                 <div className="h-3 w-3 rounded-full bg-blue-400"></div>
               </div>
             </div>
             
-            <div className="absolute -rotate-[30deg] top-1/2 -right-20 translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 w-[600px] transform-gpu">
+            <div className="absolute -rotate-[30deg] top-1/2 -right-20 translate-y-1/2 bg-white/10 backdrop-blur-xs p-3 w-[600px] transform-gpu">
               <div className="flex items-center justify-around">
                 <span className="text-white/80 uppercase text-lg font-semibold tracking-wider">Motion</span>
                 <div className="h-3 w-3 rounded-full bg-blue-400"></div>
               </div>
             </div>
             
-            <div className="absolute -rotate-[30deg] top-2/3 -right-20 translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 w-[600px] transform-gpu">
+            <div className="absolute -rotate-[30deg] top-2/3 -right-20 translate-y-1/2 bg-white/10 backdrop-blur-xs p-3 w-[600px] transform-gpu">
               <div className="flex items-center justify-around">
                 <span className="text-white/80 uppercase text-lg font-semibold tracking-wider">Animation</span>
                 <div className="h-3 w-3 rounded-full bg-blue-400"></div>
@@ -103,15 +103,15 @@ export default function GleamyPage() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-neutral-800 -rotate-[4deg] -translate-y-10 scale-110 transform-gpu">
             <div className="flex items-center h-full justify-around transform rotate-[4deg] px-8 overflow-x-auto whitespace-nowrap">
               <span className="uppercase text-neutral-400 font-bold">Creative Design</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">UI/UX</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Marketing</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Motion</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Animation</span>
-              <div className="h-2 w-2 rounded-full bg-blue-400 flex-shrink-0"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 shrink-0"></div>
               <span className="uppercase text-neutral-400 font-bold">Branding</span>
             </div>
           </div>

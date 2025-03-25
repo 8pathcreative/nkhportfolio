@@ -98,14 +98,14 @@ export function OptimizedImage({
             objectFit === "none" && "object-none",
             objectFit === "scale-down" && "object-scale-down",
             hoverEffect && "portfolio-image",
-            isLoading ? "scale-105 blur-sm" : "scale-100 blur-0",
+            isLoading ? "scale-105 blur-xs" : "scale-100 blur-0",
             className
           )}
           fill={fill}
           sizes={sizes}
           quality={quality}
           priority={priority || eager}
-          placeholder="blur"
+          placeholder="blur-xs"
           blurDataURL={blurDataURL}
           onLoad={handleImageLoad}
         />
@@ -123,14 +123,14 @@ export function OptimizedImage({
             objectFit === "none" && "object-none",
             objectFit === "scale-down" && "object-scale-down",
             hoverEffect && "portfolio-image",
-            isLoading ? "scale-105 blur-sm" : "scale-100 blur-0",
+            isLoading ? "scale-105 blur-xs" : "scale-100 blur-0",
             className
           )}
           fill={fill}
           sizes={sizes}
           quality={quality}
           priority={priority || eager}
-          placeholder="blur"
+          placeholder="blur-xs"
           blurDataURL={blurDataURL}
           onLoad={handleImageLoad}
           onError={handleImageError}

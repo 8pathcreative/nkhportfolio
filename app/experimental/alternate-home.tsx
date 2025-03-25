@@ -12,7 +12,7 @@ export default function AlternateHome() {
       <header className="fixed top-0 left-0 right-0 z-50">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="text-xl font-medium tracking-wider">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-200 to-neutral-500">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-neutral-200 to-neutral-500">
               Neil Humphrey
             </span>
           </Link>
@@ -53,7 +53,7 @@ export default function AlternateHome() {
             priority
           />
         </div>
-        <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-purple-400 via-blue-400 to-blue-600 bg-clip-text text-transparent">
           Design Engineer
         </h1>
         <p className="text-xl md:text-2xl text-neutral-400 max-w-2xl mb-12">
@@ -63,7 +63,7 @@ export default function AlternateHome() {
         <div className="flex gap-4">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
           >
             View My Work
           </Button>

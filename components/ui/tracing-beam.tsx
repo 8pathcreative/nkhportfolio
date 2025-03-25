@@ -45,7 +45,7 @@ export function TracingBeam({
           opacity: { duration: 0.2 },
           top: { duration: 0.5, ease: "easeOut" },
         }}
-        className="absolute left-0 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 blur-3xl opacity-20 -z-10 -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="absolute left-0 w-16 h-16 bg-linear-to-r from-blue-500 to-purple-500 blur-3xl opacity-20 -z-10 -translate-x-1/2 -translate-y-1/2 rounded-full"
       />
       <div className="relative w-full">{children}</div>
     </div>

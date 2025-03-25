@@ -68,9 +68,9 @@ export function BackgroundBeams({
       <div className="absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(transparent,white)] [background:radial-gradient(circle_at_center_center,rgba(56,189,248,0.2)_5%,rgba(56,189,248,0.05)_25%,transparent_60%)]"></div>
 
       <div className="absolute h-full w-full">
-        <div className="absolute h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-3xl filter"></div>
-        <div className="absolute right-0 top-1/4 h-[400px] w-[400px] translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-l from-blue-400 to-violet-500 opacity-20 blur-3xl filter"></div>
-        <div className="absolute bottom-0 left-1/4 h-[300px] w-[300px] -translate-x-1/2 translate-y-1/2 rounded-full bg-gradient-to-tr from-pink-500 to-indigo-500 opacity-20 blur-3xl filter"></div>
+        <div className="absolute h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-blue-500 to-purple-600 opacity-20 blur-3xl filter"></div>
+        <div className="absolute right-0 top-1/4 h-[400px] w-[400px] translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-l from-blue-400 to-violet-500 opacity-20 blur-3xl filter"></div>
+        <div className="absolute bottom-0 left-1/4 h-[300px] w-[300px] -translate-x-1/2 translate-y-1/2 rounded-full bg-linear-to-tr from-pink-500 to-indigo-500 opacity-20 blur-3xl filter"></div>
       </div>
       
       <svg className="absolute inset-0 h-full w-full opacity-[0.02]">

@@ -37,7 +37,7 @@ export default function ExperimentalFeaturedProject() {
                 </CardItem>
                 <CardItem
                   translateZ="80"
-                  className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-sm"
+                  className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-xs px-4 py-2 rounded-lg text-white text-sm"
                 >
                   3D Medical App • 2023
                 </CardItem>

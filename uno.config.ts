@@ -26,7 +26,7 @@ export default defineConfig({
   
   // Custom shorthand classes (similar to @apply in Tailwind)
   shortcuts: {
-    'border-magic': 'relative before:absolute before:inset-0 before:rounded-lg before:p-[1px] before:bg-gradient-to-r before:from-indigo-500 before:via-purple-500 before:to-pink-500 before:content-empty before:z-0',
+    'border-magic': 'relative before:absolute before:inset-0 before:rounded-lg before:p-[1px] before:bg-linear-to-r before:from-indigo-500 before:via-purple-500 before:to-pink-500 before:content-empty before:z-0',
     'border-magic-content': 'relative z-10',
   },
   

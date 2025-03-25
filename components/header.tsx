@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40 h-[var(--header-height)]">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xs border-b border-border/40 h-[var(--header-height)]">
         <div className="container mx-auto px-4 h-full flex justify-between items-center">
           <Link href="/" className="text-lg font-medium">
             Neil.

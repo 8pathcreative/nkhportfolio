@@ -65,14 +65,14 @@ export default function Timeline() {
                 <div className={`flex gap-6 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                   {/* Icon */}
                   <div className="relative z-10">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-sm ${item.iconBg}`}>
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-2xs ${item.iconBg}`}>
                       {item.icon}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div
-                    className={`bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-border flex-1 shadow-md ${index % 2 === 0 ? "md:mr-10" : "md:ml-10"}`}
+                    className={`bg-background/50 backdrop-blur-xs p-6 rounded-lg border border-border flex-1 shadow-md ${index % 2 === 0 ? "md:mr-10" : "md:ml-10"}`}
                   >
                     <h3 className="text-lg font-medium mb-2">{item.title}</h3>
                     <p className="text-muted-foreground">{item.description}</p>

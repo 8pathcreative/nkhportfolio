@@ -18,7 +18,7 @@ export default function Testimonial() {
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <button className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors">
+              <button className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-xs flex items-center justify-center hover:bg-white/20 transition-colors">
                 <Play className="h-6 w-6 text-white" fill="white" />
               </button>
             </div>
