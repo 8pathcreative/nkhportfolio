@@ -101,6 +101,24 @@ export default function DesignExamplesPage() {
             </div>
           </div>
         </Link>
+        
+        {/* Floating Navbar */}
+        <Link href="/design-examples/floating-navbar" className="group">
+          <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-600">
+            <div className="aspect-video w-full bg-white relative overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-blue-500/30 to-blue-900/80 text-white">
+                <div className="p-4 sm:p-8 text-center">
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-2">Floating Navbar</h2>
+                  <p className="text-sm text-gray-200">Modern navigation with animations</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-3 sm:p-4">
+              <h3 className="font-medium text-base sm:text-lg mb-1">Floating Navbar</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">Animated navbar with theme toggle and hamburger menu</p>
+            </div>
+          </div>
+        </Link>
       </div>
       
       <div className="mt-12 sm:mt-16 text-center">
