@@ -16,7 +16,7 @@ export default function MinimalProfilePage() {
       {/* Header/Navigation */}
       <header className="px-6 md:px-12 py-6 flex justify-between items-center">
         <Link href="#" className="text-sm">
-          hi@oguz.design
+          hi@neilhumphrey.com
         </Link>
         <nav className="flex gap-6 md:gap-8">
           <Link href="#" className="text-sm hover:text-gray-300 transition-colors">Works</Link>
@@ -32,10 +32,10 @@ export default function MinimalProfilePage() {
         <div className="mb-8 relative">
           <div className="w-24 h-24 overflow-hidden rounded-full relative mx-auto">
             <Image 
-              src="/images/profile.jpg"
+              src="/static/neil-profile.webp"
               alt="Profile"
-              width={96}
-              height={96}
+              width={150}
+              height={150}
               className="object-cover w-full h-full"
               priority
             />
@@ -44,7 +44,7 @@ export default function MinimalProfilePage() {
         
         {/* Greeting */}
         <h1 className="text-2xl mb-2 flex items-center justify-center gap-2">
-          Hi, I'm Oguz
+          Hi, I'm Neil
           <span role="img" aria-label="wave">👋</span>
         </h1>
         
@@ -74,6 +74,24 @@ export default function MinimalProfilePage() {
           </Link>
         </div>
       </main>
+      
+      {/* Location and Available Status */}
+      <div className="fixed bottom-6 left-0 right-0 px-6 md:px-12">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-gray-400">Based in Omaha</span>
+            <span className="text-gray-500">🇺🇸</span>
+          </div>
+          
+          <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-sm text-gray-300">Available for Work</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 } 
