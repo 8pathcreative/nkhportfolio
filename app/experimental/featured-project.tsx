@@ -10,7 +10,7 @@ export default function ExperimentalFeaturedProject() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="md:w-1/2 content-gap-sm flex flex-col">
-            <span className="text-sm uppercase tracking-wider text-muted-foreground">Featured Project</span>
+            <span className="text-sm uppercase tracking-wider text-muted-foreground mb-4">Featured Project</span>
             <h2 className="text-3xl md:text-4xl font-medium">3D Pelvic Floor Visualization</h2>
             <p className="text-lg text-muted-foreground">
               An interactive 3D application for healthcare providers, enabling detailed visualization of pelvic floor anatomy
