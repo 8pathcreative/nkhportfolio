@@ -101,5 +101,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar-hide')],
 } 
