@@ -192,7 +192,7 @@
 
 /* Section heading spacing */
 .section-heading {
-  @apply mb-8 md:mb-12 lg:mb-16;
+  @apply mb-8 md:mb-8 lg:mb-8;
 }
 
 .section-subheading {
