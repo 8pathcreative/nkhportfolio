@@ -32,12 +32,12 @@ export function Section({
   className,
   ...props
 }: SectionProps) {
-  // Map size to standardized spacing classes
+  // Map size to standardized spacing classes using Tailwind CSS 4 syntax
   const sizeClasses = {
     sm: "py-section-y-sm", // Small section spacing
-    md: "py-section-y-md", // Medium section spacing (default)
+    md: "py-section-y", // Medium section spacing (default)
     lg: "py-section-y-lg", // Large section spacing
-    xl: "py-section-y-xl", // Extra large section spacing
+    xl: "py-[10rem]", // Extra large section spacing (custom)
   };
 
   return (
@@ -97,7 +97,7 @@ export function SectionHeader({
       )}
     >
       <h2 className={cn(
-        "text-3xl md:text-4xl font-medium mb-content-gap-sm", 
+        "text-2xl md:text-3xl font-medium mb-content-gap-sm", 
         titleClassName
       )}>
         {title}
@@ -105,7 +105,7 @@ export function SectionHeader({
       
       {subtitle && (
         <p className={cn(
-          "text-xl md:text-2xl text-muted-foreground max-w-3xl",
+          "text-base md:text-lg text-muted-foreground max-w-3xl",
           {
             "mx-auto": align === "center",
             "ml-auto": align === "right"
@@ -129,7 +129,7 @@ export function SectionContent({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("content-gap", className)}
+      className={cn("gap-content-gap", className)}
       {...props}
     >
       {children}

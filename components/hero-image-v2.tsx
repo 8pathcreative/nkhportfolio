@@ -64,7 +64,7 @@ export default function HeroImageV2() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl font-bold leading-tight mb-2"
+            className="text-3xl sm:text-4xl font-bold leading-tight mb-2"
           >
             Hey! I'm Neil.
           </motion.h1>
@@ -72,7 +72,7 @@ export default function HeroImageV2() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl sm:text-2xl font-light max-w-lg"
+            className="text-base sm:text-lg font-light max-w-lg"
           >
             precision in multiple design disciplines.
           </motion.p>
@@ -136,7 +136,7 @@ export default function HeroImageV2() {
             transform: `translateY(${Math.min(scrollY * 0.4, 100)}px)`
           }}
         >
-          <h2 className="text-[12vw] sm:text-[14vw] font-bold leading-none tracking-tighter">
+          <h2 className="text-[10vw] sm:text-[12vw] font-bold leading-none tracking-tighter">
             Design Engineer
           </h2>
         </motion.div>
