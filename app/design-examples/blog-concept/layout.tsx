@@ -10,10 +10,5 @@ export default function BlogConceptLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <>
-      <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-      {children}
-    </>
-  )
+  return children
 } 

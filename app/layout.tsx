@@ -62,11 +62,6 @@ export default function RootLayout({
       <head>
         <StructuredData type="WebSite" />
         <StructuredData type="Person" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
