@@ -9,8 +9,8 @@ export default function FloatingNavbarLayout({
   children: React.ReactNode
 }) {
   return (
-    <div>
+    <>
       {children}
-    </div>
+    </>
   )
 } 
