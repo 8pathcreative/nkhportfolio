@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-type ContainerSize = "sm" | "md" | "lg" | "xl" | "full";
+type ContainerSize = "sm" | "md" | "lg" | "xl" | "2xl" | "full";
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: ContainerSize;
@@ -23,12 +23,13 @@ export function Container({
   children,
   ...props
 }: ContainerProps) {
-  // Maps to Tailwind's container breakpoints using standardized variables
+  // Maps to Tailwind CSS 4 container breakpoints with REM values
   const sizeClasses = {
-    sm: "max-w-screen-sm",      // 640px
-    md: "max-w-screen-md",      // 768px
-    lg: "max-w-screen-lg",      // 1024px
-    xl: "max-w-screen-xl",      // 1280px
+    sm: "max-w-[40rem]",     // 640px
+    md: "max-w-[48rem]",     // 768px
+    lg: "max-w-[64rem]",     // 1024px
+    xl: "max-w-[80rem]",     // 1280px
+    "2xl": "max-w-[96rem]",  // 1536px
     full: "w-full",
   };
   

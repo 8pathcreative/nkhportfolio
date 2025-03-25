@@ -7,6 +7,14 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    // Set custom breakpoints using Tailwind CSS 4 syntax with REM values
+    screens: {
+      'sm': '40rem',    // 640px
+      'md': '48rem',    // 768px
+      'lg': '64rem',    // 1024px
+      'xl': '80rem',    // 1280px
+      '2xl': '96rem',   // 1536px
+    },
     container: {
       center: true,
       padding: {
@@ -15,19 +23,23 @@ module.exports = {
         lg: '2rem',
       },
       screens: {
-        '2xl': '1400px',
+        sm: '40rem',    // 640px
+        md: '48rem',    // 768px
+        lg: '64rem',    // 1024px
+        xl: '80rem',    // 1280px
+        '2xl': '87.5rem', // 1400px
       },
     },
     extend: {
-      // Standardized spacing scale
+      // Standardized spacing scale - Tailwind CSS 4 style
       spacing: {
-        'section-sm': 'var(--section-spacing-sm)',
-        'section': 'var(--section-spacing)',
-        'section-lg': 'var(--section-spacing-lg)',
-        'content-xs': 'var(--content-gap-xs)',
-        'content-sm': 'var(--content-gap-sm)',
-        'content': 'var(--content-gap)',
-        'content-lg': 'var(--content-gap-lg)',
+        'section-y-sm': 'var(--section-spacing-sm)',
+        'section-y': 'var(--section-spacing)',
+        'section-y-lg': 'var(--section-spacing-lg)',
+        'content-gap-xs': 'var(--content-gap-xs)',
+        'content-gap-sm': 'var(--content-gap-sm)',
+        'content-gap': 'var(--content-gap)',
+        'content-gap-lg': 'var(--content-gap-lg)',
         'header': 'var(--header-height)',
       },
       colors: {
