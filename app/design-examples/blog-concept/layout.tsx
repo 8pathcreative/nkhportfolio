@@ -15,11 +15,8 @@ export default function BlogConceptLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className={inter.className}>
-        {children}
-      </body>
-    </html>
+    <div className={inter.className}>
+      {children}
+    </div>
   )
 } 
