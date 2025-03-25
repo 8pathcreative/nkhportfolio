@@ -12,7 +12,7 @@ export const revalidate = 3600 // revalidate every hour
 
 export default function MinimalProfilePage() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans">
       {/* Header/Navigation */}
       <header className="px-6 md:px-12 py-6 flex justify-between items-center">
         <Link href="#" className="text-sm">
@@ -44,7 +44,7 @@ export default function MinimalProfilePage() {
         
         {/* Greeting */}
         <h1 className="text-2xl mb-2 flex items-center justify-center gap-2">
-          Hi, I'm Neil
+          Hi, I'm Oguz
           <span role="img" aria-label="wave">👋</span>
         </h1>
         

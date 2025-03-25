@@ -15,8 +15,9 @@ export default function MinimalProfileLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className={inter.className} style={{ backgroundColor: 'black', color: 'white' }}>
         {children}
       </body>
     </html>
