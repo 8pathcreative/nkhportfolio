@@ -10,6 +10,11 @@ export const metadata: Metadata = {
 export const revalidate = 3600 // revalidate every hour
 
 export default function BlogConceptPage() {
+  const dotPatternStyle = {
+    backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px)',
+    backgroundSize: '20px 20px'
+  };
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans">
       {/* Navigation */}
@@ -43,7 +48,7 @@ export default function BlogConceptPage() {
         <div className="max-w-6xl mx-auto">
           <article className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="aspect-square relative overflow-hidden rounded-2xl bg-neutral-900">
-              <div className="absolute inset-0 bg-dot-pattern bg-center opacity-25"></div>
+              <div className="absolute inset-0 bg-center opacity-25" style={dotPatternStyle}></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-4/5 h-4/5 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black rounded-full"></div>
               </div>
@@ -75,7 +80,7 @@ export default function BlogConceptPage() {
             {[1, 2, 3].map((item) => (
               <article key={item} className="group">
                 <div className="aspect-video bg-neutral-900 rounded-xl mb-6 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-dot-pattern bg-center opacity-20"></div>
+                  <div className="absolute inset-0 bg-center opacity-20" style={dotPatternStyle}></div>
                 </div>
                 <span className="text-sm text-gray-500 mb-2 block">May 24, 2023</span>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-gray-300 transition-colors">
