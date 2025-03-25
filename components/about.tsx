@@ -16,7 +16,7 @@ export default function About() {
         
         <div className="grid md:grid-cols-[2fr_1fr] gap-8 md:gap-12 lg:gap-16 items-start">
           <div className="space-y-6">
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-6 text-base">
               Hi, i'm Neil! I'm a design engineer with 9+ years of experience I'm a Design Engineer specializing in the intersection of UX design and front-end development. With a deep understanding of user experience, interaction design, and scalable front-end architecture, I craft intuitive digital experiences that are as functional as they are beautiful.
             </p>
             
