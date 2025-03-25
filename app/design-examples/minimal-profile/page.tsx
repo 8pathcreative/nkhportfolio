@@ -1,14 +1,8 @@
 'use client'
 
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-
-export const metadata: Metadata = {
-  title: 'Minimal Profile | Design Example',
-  description: 'A minimal black profile design with clean typography',
-}
 
 // This enables ISR (Incremental Static Regeneration)
 export const revalidate = 3600 // revalidate every hour
