@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: 'A minimal black profile design with clean typography',
 }
 
+// This enables ISR (Incremental Static Regeneration)
+export const revalidate = 3600 // revalidate every hour
+
 export default function MinimalProfileLayout({
   children,
 }: {
