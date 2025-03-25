@@ -1,8 +1,4 @@
-import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
-
-// Use Inter font for clean typography
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Minimal Profile | Design Example',
@@ -15,7 +11,7 @@ export default function MinimalProfileLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className={inter.className}>
+    <div>
       {children}
     </div>
   )

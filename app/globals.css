@@ -51,7 +51,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  --font-sans: var(--font-inter);
+  --font-sans: Inter, sans-serif;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -140,6 +140,10 @@
 
 @layer base {
   :root {
+    /* Font settings for Inter */
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    
     /* Theme colors */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -182,6 +186,13 @@
     --content-gap-sm: var(--spacing-sm); /* 1.5rem/24px */
     --content-gap: var(--spacing-md);    /* 2rem/32px */
     --content-gap-lg: var(--spacing-lg); /* 3rem/48px */
+  }
+
+  /* Variable font support */
+  @supports (font-variation-settings: normal) {
+    :root { 
+      font-family: InterVariable, sans-serif; 
+    }
   }
 
   .dark {
