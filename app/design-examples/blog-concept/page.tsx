@@ -3,9 +3,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-// This enables ISR (Incremental Static Regeneration)
-export const revalidate = 3600 // revalidate every hour
-
 export default function BlogConceptPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dotPatternStyle = {
