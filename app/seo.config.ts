@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 const config: Metadata = {
+  metadataBase: new URL('https://nkhportfolio.vercel.app'),
   title: {
     template: '%s | Neil Humphrey - UX Design Engineer',
     default: 'Neil Humphrey | Healthcare UX Design Engineer Portfolio',
@@ -15,7 +16,7 @@ const config: Metadata = {
     description: 'Personal portfolio of Neil Humphrey, a UX design engineer based in Omaha, Nebraska specializing in medical and healthcare solutions.',
     images: [
       {
-        url: 'https://cdn.prod.website-files.com/6593837a237f27f93f257a5e/660f296d2b0fd9bfed7858f6_tablet-view-3d-pelvic-floor-p-1600.webp',
+        url: '/static/pelvic-model.webp',
         width: 1200,
         height: 630,
         alt: 'Neil Humphrey - Healthcare UX Design Engineer',
@@ -24,44 +25,22 @@ const config: Metadata = {
     ],
   },
   twitter: {
-    handle: '@neilhumphrey',
+    creator: '@neilhumphrey',
     site: '@neilhumphrey',
-    cardType: 'summary_large_image',
+    card: 'summary_large_image',
   },
-  additionalLinkTags: [
-    {
-      rel: 'icon',
-      href: '/favicon.ico',
-    },
-    {
-      rel: 'apple-touch-icon',
-      href: '/apple-touch-icon.png',
-      sizes: '180x180',
-    },
-    {
-      rel: 'manifest',
-      href: '/manifest.webmanifest',
-    },
-  ],
-  additionalMetaTags: [
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1',
-    },
-    {
-      name: 'theme-color',
-      content: '#000000',
-    },
-    {
-      name: 'author',
-      content: 'Neil Humphrey',
-    },
-    {
-      name: 'keywords',
-      content: 'UX design, healthcare design, medical UX, clinical workflows, patient experience, healthcare UI',
-    },
-  ],
-  canonical: 'https://nkhportfolio.vercel.app',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.webmanifest',
+  themeColor: '#000000',
+  keywords: ['UX design', 'healthcare design', 'medical UX', 'clinical workflows', 'patient experience', 'healthcare UI'],
+  authors: [{ name: 'Neil Humphrey' }],
+  viewport: 'width=device-width, initial-scale=1',
+  alternates: {
+    canonical: 'https://nkhportfolio.vercel.app',
+  },
 };
 
 export default config; 

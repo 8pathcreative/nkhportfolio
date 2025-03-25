@@ -15,13 +15,12 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.prod.website-files.com',
-        pathname: '**',
-      },
+      // Remove the external CDN pattern since we're using local images
     ],
     unoptimized: false,
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   experimental: {
     webpackBuildWorker: true,
@@ -51,11 +50,6 @@ const nextConfig = {
       // Enable module concatenation for production
       config.optimization.concatenateModules = true;
     }
-    
-    // Add UnoCSS to webpack configuration
-    config.plugins.push(
-      // This will be automatically detected by UnoCSS
-    );
     
     return config;
   },

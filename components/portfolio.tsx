@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useCallback, useMemo } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -65,7 +65,52 @@ const projects = [
 ]
 
 export default function Portfolio() {
-  const [hoveredId, setHoveredId] = useState<string | null>(null)
+  // Use memo to prevent unnecessary recalculations
+  const memoizedProjects = useMemo(() => projects, []);
+
+  // Separate component for each project card to isolate re-renders
+  const ProjectCard = useCallback(({ project }: { project: typeof projects[0] }) => {
+    return (
+      <div className="group">
+        <Link href={`/project/${project.id}`} className="block">
+          <CardContainer className="w-full" containerClassName="py-4">
+            <CardBody className="w-full h-auto relative aspect-4/3 rounded-lg overflow-hidden border border-border">
+              <CardItem translateZ="100" className="w-full h-full">
+                <Image
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover"
+                  priority={parseInt(project.id) <= 2} // Only prioritize loading for the first two images
+                />
+              </CardItem>
+              <CardItem
+                translateZ="50"
+                className="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+              >
+                <CardItem 
+                  translateZ="100" 
+                  className="text-white font-medium px-6 py-3 border border-white/30 rounded-full backdrop-blur-xs w-auto"
+                >
+                  View Case Study
+                </CardItem>
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+
+          <div className="space-y-3 mt-6">
+            <div className="flex justify-between items-center">
+              <h3 className="text-xl font-medium">{project.title}</h3>
+              <span className="text-sm text-muted-foreground">{project.year}</span>
+            </div>
+            <p className="text-sm text-muted-foreground">{project.category}</p>
+            <p className="text-base">{project.description}</p>
+          </div>
+        </Link>
+      </div>
+    );
+  }, []);
 
   return (
     <section id="portfolio" className="section-spacing px-4 relative">
@@ -76,51 +121,8 @@ export default function Portfolio() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="group"
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
-              <Link href={`/project/${project.id}`} className="block">
-                <CardContainer className="w-full" containerClassName="py-4">
-                  <CardBody className="w-full h-auto relative aspect-4/3 rounded-lg overflow-hidden border border-border">
-                    <CardItem translateZ="100" className="w-full h-full">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        width={1200}
-                        height={800}
-                        className="w-full h-full object-cover"
-                      />
-                    </CardItem>
-                    <CardItem
-                      translateZ="50"
-                      className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-500 ${
-                        hoveredId === project.id ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <CardItem 
-                        translateZ="100" 
-                        className="text-white font-medium px-6 py-3 border border-white/30 rounded-full backdrop-blur-xs w-auto"
-                      >
-                        View Case Study
-                      </CardItem>
-                    </CardItem>
-                  </CardBody>
-                </CardContainer>
-
-                <div className="space-y-3 mt-6">
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-xl font-medium">{project.title}</h3>
-                    <span className="text-sm text-muted-foreground">{project.year}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{project.category}</p>
-                  <p className="text-base">{project.description}</p>
-                </div>
-              </Link>
-            </div>
+          {memoizedProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 

@@ -28,11 +28,13 @@ export default function ExperimentalFeaturedProject() {
               <CardBody className="w-full h-auto relative aspect-video rounded-lg overflow-hidden">
                 <CardItem translateZ="60" className="w-full h-full">
                   <Image
-                    src="https://cdn.prod.website-files.com/6593837a237f27f93f257a5e/660f296d2b0fd9bfed7858f6_tablet-view-3d-pelvic-floor-p-1600.webp"
+                    src="/static/pelvic-model.webp"
                     alt="Healthcare Provider Dashboard - 3D Pelvic Floor View"
                     width={1600}
                     height={1068}
                     className="w-full h-full object-cover"
+                    priority
+                    quality={90}
                   />
                 </CardItem>
                 <CardItem

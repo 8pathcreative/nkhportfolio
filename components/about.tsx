@@ -47,11 +47,13 @@ export default function About() {
           <div className="relative md:mt-0 mt-8">
             <div className="aspect-square rounded-full overflow-hidden border-4 border-neutral-800">
               <Image
-                src="https://cdn.prod.website-files.com/6593837a237f27f93f2579ec/659de91ca988aa0c3ba35b73_neil-about-image.webp"
+                src="/static/neil-profile.webp"
                 alt="Neil Humphrey"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover rounded-lg"
+                priority
+                quality={90}
               />
             </div>
           </div>

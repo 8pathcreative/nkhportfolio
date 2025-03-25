@@ -46,7 +46,7 @@ export default function ArticleSeo({
   // Current site URL from config or env
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nkhportfolio.vercel.app";
   const url = `${siteUrl}${path}`;
-  const defaultImage = "https://cdn.prod.website-files.com/6593837a237f27f93f257a5e/660f296d2b0fd9bfed7858f6_tablet-view-3d-pelvic-floor-p-1600.webp";
+  const defaultImage = "/static/pelvic-model.webp";
   const imageUrl = image || defaultImage;
 
   return (

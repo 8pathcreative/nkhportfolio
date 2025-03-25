@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#7E22CE" />
+  <ellipse cx="400" cy="300" rx="250" ry="150" fill="#E9D5FF" />
+  <ellipse cx="300" cy="280" rx="70" ry="40" fill="#7E22CE" />
+  <ellipse cx="500" cy="280" rx="70" ry="40" fill="#7E22CE" />
+  <path d="M300,400 Q400,500 500,400" stroke="#7E22CE" stroke-width="20" fill="none" />
+  <text x="400" y="550" font-family="Arial" font-size="32" fill="white" text-anchor="middle">Pelvic Model</text>
+</svg> 

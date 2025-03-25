@@ -20,7 +20,7 @@ export default function StructuredData({ type }: StructuredDataProps) {
           name: "Healthcare Industry"
         },
         description: "UX Design Engineer with 9+ years of experience working with medical centers and healthcare providers.",
-        image: "https://cdn.prod.website-files.com/6593837a237f27f93f2579ec/659de91ca988aa0c3ba35b73_neil-about-image.webp",
+        image: "/static/neil-profile.webp",
         sameAs: [
           "https://linkedin.com",
           "https://github.com"

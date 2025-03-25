@@ -82,6 +82,10 @@ export function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps) {
             Contact
             <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
+          <Link href="/design-examples" onClick={onClose} className="hover:text-primary/80 transition-colors relative group">
+            Design Examples
+            <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </Link>
         </nav>
       </div>
 

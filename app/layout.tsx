@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Neil Humphrey Portfolio',
     images: [
       {
-        url: 'https://cdn.prod.website-files.com/6593837a237f27f93f257a5e/660f296d2b0fd9bfed7858f6_tablet-view-3d-pelvic-floor-p-1600.webp',
+        url: '/static/pelvic-model.webp',
         width: 1200,
         height: 630,
         alt: 'Neil Humphrey - Healthcare UX Design Engineer',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Neil Humphrey | UX Design Engineer',
     description: 'Personal portfolio of Neil Humphrey, a UX design engineer based in Omaha, Nebraska specializing in medical and healthcare solutions.',
-    images: ['https://cdn.prod.website-files.com/6593837a237f27f93f257a5e/660f296d2b0fd9bfed7858f6_tablet-view-3d-pelvic-floor-p-1600.webp'],
+    images: ['/static/pelvic-model.webp'],
   },
   robots: {
     index: true,

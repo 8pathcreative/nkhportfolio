@@ -1,30 +1,37 @@
 import dynamic from 'next/dynamic'
 import { Metadata } from "next"
 import Header from "@/components/header"
-import { FeaturedProject, Portfolio } from "@/app/components/client-imports"
-
-// Import critical above-the-fold components normally
 import Hero from "@/components/hero"
 import About from "@/components/about"
+import FeaturedProject from "@/components/featured-project"
 
-// Lazy-load below-the-fold components with loading placeholders
-const Skills = dynamic(() => import("@/components/skills"), { 
-  ssr: true,
-  loading: () => <div className="min-h-[500px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
-})
-const Timeline = dynamic(() => import("@/components/timeline"), { 
+// Optimize dynamic loading with more aggressive loading strategies
+const DynamicPortfolio = dynamic(() => import("@/components/portfolio"), { 
   ssr: true,
   loading: () => <div className="min-h-[400px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
-const Testimonial = dynamic(() => import("@/components/testimonial"), { 
+
+const DynamicSkills = dynamic(() => import("@/components/skills"), { 
+  ssr: true,
+  loading: () => <div className="min-h-[500px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
+
+const DynamicTimeline = dynamic(() => import("@/components/timeline"), { 
+  ssr: true,
+  loading: () => <div className="min-h-[400px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
+})
+
+const DynamicTestimonial = dynamic(() => import("@/components/testimonial"), { 
   ssr: true,
   loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
-const Contact = dynamic(() => import("@/components/contact"), { 
+
+const DynamicContact = dynamic(() => import("@/components/contact"), { 
   ssr: true,
   loading: () => <div className="min-h-[300px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
-const Footer = dynamic(() => import("@/components/footer"), { 
+
+const DynamicFooter = dynamic(() => import("@/components/footer"), { 
   ssr: true,
   loading: () => <div className="min-h-[100px] w-full animate-pulse bg-neutral-900/20 rounded-lg"></div>
 })
@@ -38,6 +45,11 @@ export const metadata: Metadata = {
   },
 }
 
+// Force static generation
+export const staticParams = {}
+export const dynamicRendering = "force-static"
+export const revalidate = 3600 // Revalidate at most every hour
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
@@ -45,12 +57,12 @@ export default function Home() {
       <Hero />
       <About />
       <FeaturedProject />
-      <Portfolio />
-      <Skills />
-      <Timeline />
-      <Testimonial />
-      <Contact />
-      <Footer />
+      <DynamicPortfolio />
+      <DynamicSkills />
+      <DynamicTimeline />
+      <DynamicTestimonial />
+      <DynamicContact />
+      <DynamicFooter />
     </main>
   )
 }
