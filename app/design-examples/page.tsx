@@ -65,6 +65,24 @@ export default function DesignExamplesPage() {
             </div>
           </div>
         </Link>
+        
+        {/* Blog Concept Design */}
+        <Link href="/design-examples/blog-concept" className="group">
+          <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden transition duration-300 hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-600">
+            <div className="aspect-video w-full bg-black relative overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/70 to-black/95 text-white">
+                <div className="p-8 text-center">
+                  <h2 className="text-3xl font-bold mb-2">Blog Concept</h2>
+                  <p className="text-sm text-gray-300">Minimal dark theme blog design</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-4">
+              <h3 className="font-medium text-lg mb-1">Blog Concept</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">Modern blog layout with content categorization</p>
+            </div>
+          </div>
+        </Link>
       </div>
       
       <div className="mt-16 text-center">
