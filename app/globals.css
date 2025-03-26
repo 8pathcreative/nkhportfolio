@@ -3,44 +3,12 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* Modern breakpoints for Tailwind CSS 4 using REMs */
+  /* Tailwind CSS 4 breakpoints */
   --breakpoint-sm: 40rem;    /* 640px */
   --breakpoint-md: 48rem;    /* 768px */
   --breakpoint-lg: 64rem;    /* 1024px */
   --breakpoint-xl: 80rem;    /* 1280px */
   --breakpoint-2xl: 96rem;   /* 1536px */
-
-  /* Text sizes */
-  --text-2: 2rem;
-  --text-3: 3rem;
-  --text-5: 5rem;
-  --text-15: 1.5rem;
-  --text-25: 2.5rem;
-  --text-45: 4.5rem;
-  --text-125: 1.25rem;
-  --text-375: 3.75rem;
-  --text-1125: 1.125rem;
-
-  /* Standardized spacing */
-  --header-height: 4rem; /* 64px */
-  --spacing-xs: 0.75rem; /* 12px */
-  --spacing-sm: 1.5rem;  /* 24px */
-  --spacing-md: 2rem;    /* 32px */
-  --spacing-lg: 3rem;    /* 48px */
-  --spacing-xl: 4rem;    /* 64px */
-  --spacing-2xl: 6rem;   /* 96px */
-  --spacing-3xl: 8rem;   /* 128px */
-  
-  /* Section spacing - consistent across site */
-  --section-spacing-sm: var(--spacing-xl);  /* 4rem/64px */
-  --section-spacing: var(--spacing-2xl);    /* 6rem/96px */
-  --section-spacing-lg: var(--spacing-3xl); /* 8rem/128px */
-  
-  /* Content spacing - for inner elements */
-  --content-gap-xs: var(--spacing-xs); /* 0.75rem/12px */
-  --content-gap-sm: var(--spacing-sm); /* 1.5rem/24px */
-  --content-gap: var(--spacing-md);    /* 2rem/32px */
-  --content-gap-lg: var(--spacing-lg); /* 3rem/48px */
 
   /* Colors - Light mode */
   --border: 240 5.9% 90%;
@@ -179,18 +147,6 @@
 
 /* Utility classes */
 @layer utilities {
-  /* Custom REM-based text size utilities with smaller sizes */
-  .text-1rem { font-size: 1rem; }
-  .text-1125rem { font-size: 1.125rem; } /* 18px */
-  .text-125rem { font-size: 1.25rem; } /* 20px */
-  .text-15rem { font-size: 1.375rem; } /* 22px - reduced from 24px */
-  .text-2rem { font-size: 1.75rem; } /* 28px - reduced from 32px */
-  .text-25rem { font-size: 2rem; } /* 32px - reduced from 40px */
-  .text-3rem { font-size: 2.5rem; } /* 40px - reduced from 48px */
-  .text-375rem { font-size: 3rem; } /* 48px - reduced from 60px */
-  .text-45rem { font-size: 3.5rem; } /* 56px - reduced from 72px */
-  .text-5rem { font-size: 4rem; } /* 64px - reduced from 80px */
-
   /* Gradient text utilities */
   .gradient-text {
     background: linear-gradient(to right, #4ecdc4, #2cb5e8);
@@ -227,44 +183,6 @@
     background-image: 
       linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  }
-  
-  /* Standard section spacing classes */
-  .py-section-y-sm {
-    padding-top: var(--section-spacing-sm);
-    padding-bottom: var(--section-spacing-sm);
-  }
-
-  .py-section-y {
-    padding-top: var(--section-spacing);
-    padding-bottom: var(--section-spacing);
-  }
-
-  .py-section-y-lg {
-    padding-top: var(--section-spacing-lg);
-    padding-bottom: var(--section-spacing-lg);
-  }
-
-  /* Content gap spacing classes */
-  .gap-content-gap-sm {
-    gap: var(--content-gap-sm);
-  }
-
-  .gap-content-gap {
-    gap: var(--content-gap);
-  }
-
-  .gap-content-gap-lg {
-    gap: var(--content-gap-lg);
-  }
-
-  /* Section heading spacing */
-  .section-heading {
-    margin-bottom: var(--content-gap-lg);
-  }
-
-  .section-subheading {
-    margin-bottom: var(--content-gap);
   }
 }
 
