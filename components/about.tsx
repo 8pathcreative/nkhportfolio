@@ -7,7 +7,7 @@ import { ShootingStarField, StarsField } from "./ui/shooting-stars"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-28 lg:py-36 px-4 relative overflow-hidden bg-linear-to-b from-black to-slate-950">
+    <section id="about" className="pt-12 pb-20 md:py-24 lg:py-32 px-4 relative overflow-hidden bg-linear-to-b from-black to-slate-950">
       <ShootingStarField quantity={15} />
       <StarsField quantity={100} />
       
@@ -59,7 +59,7 @@ export default function About() {
           </div>
         </div>
 
-        <h3 className="text-2xl font-medium mb-8 md:mb-12 mt-16 md:mt-24 lg:mt-32">Tools I Work With</h3>
+        <h3 className="text-2xl font-medium mb-8 md:mb-12 mt-12 md:mt-20 lg:mt-24">Tools I Work With</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
           <div className="bg-neutral-900/50 backdrop-blur-xs rounded-xl p-6 border border-neutral-800 hover:border-primary/50 transition-colors group">
             <div className="flex flex-col items-center mb-4">

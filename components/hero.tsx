@@ -18,17 +18,14 @@ export default function Hero() {
     }
   }
 
-  // Pre-compute styles to avoid CSS calculation during paint
-  const heroContainerStyle = {
-    height: 'calc(100vh)',
-    position: 'relative' as const,
-    overflow: 'hidden' as const,
-  }
-
   return (
     <section 
-      className="flex flex-col justify-center items-center bg-white dark:bg-black"
-      style={heroContainerStyle}
+      className="flex flex-col justify-center items-center bg-white dark:bg-black relative"
+      style={{ 
+        height: '100svh', // Use svh (small viewport height) for better mobile support
+        maxHeight: '100vh',
+        overflowY: 'hidden' 
+      }}
     >
       {/* Grid Background - reducing opacity for faster paint */}
       <div
@@ -42,9 +39,9 @@ export default function Hero() {
         style={{ willChange: 'opacity' }}
       ></div>
       
-      <div className="text-center max-w-5xl mx-auto z-10 px-4 mt-16">
+      <div className="text-center max-w-5xl mx-auto z-10 px-4 mt-0 flex flex-col items-center">
         {isClientSide ? (
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-sm mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-sm mb-6">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
@@ -52,10 +49,10 @@ export default function Hero() {
             <span className="text-green-500 font-medium">Available for Work</span>
           </div>
         ) : (
-          <div className="h-8 mb-8"></div> // Static height placeholder to prevent layout shift
+          <div className="h-8 mb-6"></div> // Smaller placeholder to reduce space
         )}
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] mb-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] mb-6">
           <span className="block">
             Design by <span className="day-gradient-text">Day</span>,
           </span>
@@ -81,10 +78,10 @@ export default function Hero() {
 
       <button 
         onClick={scrollToAbout} 
-        className="absolute bottom-8 animate-bounce z-10 p-3 rounded-full hover:bg-background/20 transition-colors cursor-pointer"
+        className="absolute bottom-5 z-10 p-3 rounded-full hover:bg-background/20 transition-colors cursor-pointer animate-bounce"
         aria-label="Scroll to About section"
       >
-        <ChevronDown className="h-9 w-9 text-muted-foreground" />
+        <ChevronDown className="h-7 w-7 text-muted-foreground" />
       </button>
 
       <div className="absolute bottom-0 left-0 right-0 z-10">

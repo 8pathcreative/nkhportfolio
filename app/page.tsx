@@ -59,25 +59,25 @@ export default function Home() {
       <About />
       <FeaturedProject />
       
-      {/* Use client-side component hydration after main content is loaded */}
-      <div className="mt-8">
+      {/* Reduce spacing between components */}
+      <div className="mt-0">
         <DynamicPortfolio />
       </div>
       
-      {/* Add lazy loading attribute to load these components when they approach the viewport */}
-      <div className="mt-8" data-loading="lazy">
+      {/* Reduce spacing between lazy-loaded components */}
+      <div className="mt-0" data-loading="lazy">
         <DynamicSkills />
       </div>
       
-      <div className="mt-8" data-loading="lazy">
+      <div className="mt-0" data-loading="lazy">
         <DynamicTimeline />
       </div>
       
-      <div className="mt-8" data-loading="lazy">
+      <div className="mt-0" data-loading="lazy">
         <DynamicTestimonial />
       </div>
       
-      <div className="mt-8" data-loading="lazy">
+      <div className="mt-0" data-loading="lazy">
         <DynamicContact />
       </div>
       
