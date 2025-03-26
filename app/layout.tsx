@@ -52,8 +52,33 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link rel="preconnect" href="https://rsms.me/" crossOrigin="anonymous" />
+        <link rel="preload" href="https://rsms.me/inter/inter.css" as="style" />
+        <link 
+          rel="stylesheet" 
+          href="https://rsms.me/inter/inter.css" 
+          media="print" 
+          onLoad={(e) => {
+            const target = e.currentTarget;
+            target.media = 'all';
+            target.onload = null;
+          }}
+        />
+        <noscript>
+          <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        </noscript>
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @font-face {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 100 900;
+              font-display: swap;
+              src: url('https://rsms.me/inter/font-files/Inter-roman.var.woff2') format('woff2');
+              font-named-instance: 'Regular';
+            }
+          `
+        }} />
         <StructuredData type="WebSite" />
         <StructuredData type="Person" />
       </head>

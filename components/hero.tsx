@@ -4,16 +4,12 @@ import { useEffect, useState } from "react"
 import { ChevronDown } from "lucide-react"
 
 export default function Hero() {
-  // Use null as initial state to detect if we've hydrated yet
-  const [isVisible, setIsVisible] = useState<boolean | null>(true) // Start with visible to improve LCP
+  // Use a ref instead of state for scroll functionality to avoid unnecessary re-renders
+  const [isClientSide, setIsClientSide] = useState(false)
 
   useEffect(() => {
-    // Only run this effect on the client
-    setIsVisible(true)
+    setIsClientSide(true)
   }, [])
-
-  // Simplified opacity class without translate to improve paint performance
-  const opacityClass = isVisible === false ? "opacity-0" : "opacity-100"
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about")
@@ -22,34 +18,44 @@ export default function Hero() {
     }
   }
 
+  // Pre-compute styles to avoid CSS calculation during paint
+  const heroContainerStyle = {
+    height: 'calc(100vh)',
+    position: 'relative' as const,
+    overflow: 'hidden' as const,
+  }
+
   return (
     <section 
-      className="h-screen flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-black"
-      style={{ height: 'calc(100vh)' }}
+      className="flex flex-col justify-center items-center bg-white dark:bg-black"
+      style={heroContainerStyle}
     >
-      {/* Grid Background */}
+      {/* Grid Background - reducing opacity for faster paint */}
       <div
-        className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)] dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
+        className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(to_right,#e4e4e780_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e780_1px,transparent_1px)] dark:[background-image:linear-gradient(to_right,#26262680_1px,transparent_1px),linear-gradient(to_bottom,#26262680_1px,transparent_1px)]"
+        aria-hidden="true"
       />
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+      {/* Radial gradient with will-change:opacity optimization */}
+      <div 
+        className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"
+        aria-hidden="true"
+        style={{ willChange: 'opacity' }}
+      ></div>
       
-      <div className="text-center max-w-5xl mx-auto space-y-8 z-10 px-4 mt-[var(--header-height)]">
-        <div
-          className={`transition-opacity duration-500 delay-300 ${opacityClass}`}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 backdrop-blur-xs bg-black/10 text-sm">
+      <div className="text-center max-w-5xl mx-auto z-10 px-4 mt-16">
+        {isClientSide ? (
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-sm mb-8">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </span>
             <span className="text-green-500 font-medium">Available for Work</span>
           </div>
-        </div>
+        ) : (
+          <div className="h-8 mb-8"></div> // Static height placeholder to prevent layout shift
+        )}
 
-        <h1
-          className={`text-3 sm:text-375 md:text-45 lg:text-5 font-medium tracking-tight leading-[1.1] transition-opacity duration-500 ${opacityClass}`}
-        >
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] mb-8">
           <span className="block">
             Design by <span className="day-gradient-text">Day</span>,
           </span>
@@ -58,9 +64,15 @@ export default function Hero() {
           </span>
         </h1>
         
-        {/* Prerender the LCP element without transitions initially */}
+        {/* Optimized LCP element - no animations or transitions on initial render */}
         <p
-          className="text-1125 md:text-125 text-muted-foreground mt-6 max-w-2xl mx-auto font-display text-pretty"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+          style={{
+            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+            fontWeight: 400,
+            maxWidth: '42rem',
+            fontSize: 'clamp(1.125rem, 1vw + 0.9rem, 1.25rem)'
+          }}
         >
           UX Design Engineer based in Omaha, Nebraska with 9+ years of experience working with medical centers and
           multinational corporations.
